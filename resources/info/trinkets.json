@@ -1,0 +1,2921 @@
+{
+	"1": {
+		"description": [
+			"Each time you get hit, you drop a coin or two",
+			"REPENTANCE - No longer guaranteed to drop coins as The Keeper"
+		],
+		"title": "Swallowed Penny",
+		"id": "1",
+		"type": "trinket",
+		"subtitle": "Gulp!",
+		"unlock": "Unlock this item by beating Challenge #15 (Slow Roll)",
+		"tags": [
+			" the lost item pool",
+			"cent",
+			"gold",
+			"water",
+			"wet",
+			"blue"
+		]
+	},
+	"2": {
+		"description": [
+			"While held, Isaac has a significantly higher chance to find drops when breaking poops"
+		],
+		"title": "Petrified Poop",
+		"id": "2",
+		"type": "trinket",
+		"subtitle": "It feels lucky?",
+		"tags": [
+			"grey",
+			"gray"
+		]
+	},
+	"3": {
+		"description": [
+			"Lowers your spacebar item charge rate by 1",
+			"Cannot lower the charge of your spacebar item below 1 room",
+			"For example, you will now be able to use a 3 room charge item after 2 rooms instead"
+		],
+		"title": "AAA Battery",
+		"id": "3",
+		"type": "trinket",
+		"subtitle": "Trickle charge",
+		"tags": [
+			"bullet",
+			"grey",
+			"gray",
+			"yellow"
+		]
+	},
+	"4": {
+		"description": [
+			"Does the teleport effect every time you use your current spacebar item",
+			"Can be used infinitely every room if you have Guppy's Paw and no red heart containers (Can be exploited to get to the boss room without clearing any other rooms)"
+		],
+		"title": "Broken Remote",
+		"id": "4",
+		"type": "trinket",
+		"subtitle": "It's broken",
+		"tags": [
+			"joystick",
+			"grey",
+			"gray"
+		]
+	},
+	"5": {
+		"description": [
+			"Higher chance for champion enemies while held"
+		],
+		"title": "Purple Heart",
+		"id": "5",
+		"type": "trinket",
+		"subtitle": "Challenge up",
+		"tags": [
+
+		]
+	},
+	"6": {
+		"description": [
+			"Has a partial Magneto effect and will attract coins, pulling them into Isaac from a distance",
+			"Does not attract other pickups like the full Magneto item does"
+		],
+		"title": "Broken Magnet",
+		"id": "6",
+		"type": "trinket",
+		"subtitle": "It kinda works",
+		"tags": [
+			"red"
+		]
+	},
+	"7": {
+		"description": [
+			"Increases your chances to find an Angel Room instead of a Devil Room",
+			"Normally there is a 50%/50% chance of a Angel or Devil room with if a door spawns after the boss. The Rosary Bead changes this to a 75%/25% chance of an angel or devil room (respectively)"
+		],
+		"title": "Rosary Bead",
+		"id": "7",
+		"type": "trinket",
+		"subtitle": "Faith up",
+		"tags": [
+			"red",
+			"black",
+			"circle"
+		]
+	},
+	"8": {
+		"description": [
+			"When Isaac takes damage, there is a chance he will gain the Gamekid effect, turning him invincible and dealing contact damage to any enemies he touches",
+			"The chance to activate the invincibility effect is affected by your luck stat and at +38 Luck it will activate every time you get hit"
+		],
+		"title": "Cartridge",
+		"id": "8",
+		"type": "trinket",
+		"subtitle": "I remember these",
+		"tags": [
+			" the lost item pool",
+			"nes",
+			"game",
+			"grey",
+			"gray"
+		]
+	},
+	"9": {
+		"description": [
+			"Tears shrink and grow in size as they go across the room",
+			"Does not appear to affect your damage and only the hitbox size of tears"
+		],
+		"title": "Pulse Worm",
+		"id": "9",
+		"type": "trinket",
+		"subtitle": "Wub wub!",
+		"tags": [
+			"white",
+			"lump"
+		]
+	},
+	"10": {
+		"description": [
+			"Tears now move in a wave fashion across the room",
+			"Grants spectral tears",
+			"+0.4 Tears up"
+		],
+		"title": "Wiggle Worm",
+		"id": "10",
+		"type": "trinket",
+		"subtitle": "Wiggle wiggle!",
+		"tags": [
+			"white",
+			"s",
+			"snake"
+		]
+	},
+	"11": {
+		"description": [
+			"While held, tears move in a spiral pattern across the screen at high speed",
+			"Grants spectral tears",
+			"Effectively increases your range due to the tear pattern"
+		],
+		"title": "Ring Worm",
+		"id": "11",
+		"type": "trinket",
+		"subtitle": "Woop woop!",
+		"tags": [
+			"white",
+			"circle",
+			"snake"
+		]
+	},
+	"12": {
+		"description": [
+			"Tears become flat and disc shaped giving them a larger hitbox",
+			"Higher knockback effect with your tears"
+		],
+		"title": "Flat Worm",
+		"id": "12",
+		"type": "trinket",
+		"subtitle": "Blub blub!",
+		"tags": [
+			"grey",
+			"gray",
+			"eyes"
+		]
+	},
+	"13": {
+		"description": [
+			"While this trinket is held, all items in the Shop cost 0 coins",
+			"After buying any 0 cent item in the Shop, the trinket disappears"
+		],
+		"title": "Store Credit",
+		"id": "13",
+		"type": "trinket",
+		"subtitle": "YES!",
+		"unlock": "Unlock this item by beating the Chest with Lazarus",
+		"tags": [
+			"grey",
+			"gray",
+			"dollar",
+			"bill",
+			"note",
+			"cash",
+			"money"
+		]
+	},
+	"14": {
+		"description": [
+			"Isaac no longer takes damage from walking over spikes and blood creep while this trinket is held"
+		],
+		"title": "Callus",
+		"id": "14",
+		"type": "trinket",
+		"subtitle": "Your feet feel stronger",
+		"tags": [
+			" the lost item pool",
+			"brown",
+			"pink",
+			"lump",
+			"ball",
+			"spot"
+		]
+	},
+	"15": {
+		"description": [
+			"33% chance to drop a coin for every rock that you destroy",
+			"REPENTANCE - Previously was 100%, now 33%"
+		],
+		"title": "Lucky Rock",
+		"id": "15",
+		"type": "trinket",
+		"subtitle": "There's something inside",
+		"unlock": "Unlock this item by destroying 100 rocks",
+		"tags": [
+			"grey",
+			"gray",
+			"stone",
+			"square"
+		]
+	},
+	"16": {
+		"description": [
+			"Mom's Leg will now appear every 60 seconds and stomp down randomly in the room dealing 300 damage to enemies, similar to how Daddy Longlegs works but less frequent",
+			"Be warned though, Mom's leg can also stomp and hurt Isaac too!"
+		],
+		"title": "Mom's Toenail",
+		"id": "16",
+		"type": "trinket",
+		"subtitle": "???",
+		"tags": [
+			"mustache",
+			"moustache",
+			"white",
+			"yellow",
+			"moms toenail"
+		]
+	},
+	"17": {
+		"description": [
+			"Increases the chance for Black hearts to spawn"
+		],
+		"title": "Black Lipstick",
+		"id": "17",
+		"type": "trinket",
+		"subtitle": "Evil up",
+		"unlock": "Unlock this item by beating the Dark Room with Eve",
+		"tags": [
+			" the lost item pool",
+			"grey",
+			"gray",
+			"makeup"
+		]
+	},
+	"18": {
+		"description": [
+			"Gives you a higher chance of eternal hearts",
+			"Contrary to popular belief, the Bible Tract doesn't allow Angel Rooms to appear after paying for a Devil Deal"
+		],
+		"title": "Bible Tract",
+		"id": "18",
+		"type": "trinket",
+		"subtitle": "Faith up",
+		"tags": [
+			" the lost item pool",
+			"grey",
+			"gray",
+			"black",
+			"book"
+		]
+	},
+	"19": {
+		"description": [
+			"Allows you to unlock golden chests without needing a key",
+			"Does not work on locked rooms",
+			"Cain starts with this trinket after donating 68 coins to the Greed Donation Machine"
+		],
+		"title": "Paper Clip",
+		"id": "19",
+		"type": "trinket",
+		"subtitle": "Master of lockpicking",
+		"tags": [
+			"starting",
+			"grey",
+			"gray",
+			"metal",
+			"wire"
+		]
+	},
+	"20": {
+		"description": [
+			"When you reach half a heart of life remaining, a black heart will spawn",
+			"After three black hearts have spawned, the trinket dissapears"
+		],
+		"title": "Monkey's Paw",
+		"id": "20",
+		"type": "trinket",
+		"subtitle": "Wish granted",
+		"tags": [
+			" the lost item pool",
+			"hand",
+			"brown",
+			"monkeys paw"
+		]
+	},
+	"21": {
+		"description": [
+			"Imitates the behaviours of some of the other 'paper' items/trinkets",
+			"A Missing Page: When taking damage, Isaac has a chance to deal damage to the entire room in a Necronomicon style effect",
+			"Has a chance to trigger the Polaroid or Negative effect every time you take damage with half a red heart or less",
+			"Missing Poster: Dying in a sacrifice room while holding this trinket will reveal a puzzle piece on the death screen. Finding all the puzzle pieces will help you to reveal the final secret, unlocking the hidden character 'The Lost'",
+			"If held when you touch the chest after the Satan or Isaac fight and you don't have the relevant item to go to the next floor (Polaroid or Negative), you have a small chance to be taken there anyway"
+		],
+		"title": "Mysterious Paper",
+		"id": "21",
+		"type": "trinket",
+		"subtitle": "???",
+		"unlock": "Unlock this item by beating the Chest with Eden",
+		"tags": [
+			"white",
+			"grey",
+			"gray",
+			"page"
+		]
+	},
+	"22": {
+		"description": [
+			"Every time a heart would spawn, it becomes a key instead.",
+			"Hearts turn into black hearts. This doesn't convert hearts that dropped before picking up this trinket, and doesn't apply to set hearts, i.e. the eternal hearts that drop in angel rooms"
+		],
+		"title": "Daemon's Tail",
+		"id": "22",
+		"type": "trinket",
+		"subtitle": "Evil up",
+		"unlock": "Unlock this item by beating Satan with Azazel",
+		"tags": [
+			"black",
+			"devil",
+			"pointy",
+			"daemons tail",
+			"demons tail",
+			"demon tail"
+		]
+	},
+	"23": {
+		"description": [
+			"Dying in a sacrifice room while holding this trinket will unlock The Lost character",
+			"After The Lost is unlocked, dying anywhere with this trinket will bring you back to life as The Lost and the trinket will be deleted",
+			"When playing as Tainted Lost, you don't swap to being regular Lost, it simply acts as an extra life"
+		],
+		"title": "Missing Poster",
+		"id": "23",
+		"type": "trinket",
+		"subtitle": "???",
+		"unlock": "Unlock this item by beating Dark Room with Isaac",
+		"tags": [
+			"page",
+			"paper",
+			"isaac",
+			"white",
+			"writing"
+		]
+	},
+	"24": {
+		"description": [
+			"Everytime you pick up a coin, you fart"
+		],
+		"title": "Butt Penny",
+		"id": "24",
+		"type": "trinket",
+		"subtitle": "Wealth of gas",
+		"tags": [
+			"brown",
+			"orange",
+			"flat"
+		]
+	},
+	"25": {
+		"description": [
+			"Causes Isaac to create poops randomly"
+		],
+		"title": "Mysterious Candy",
+		"id": "25",
+		"type": "trinket",
+		"subtitle": "Uh-oh!",
+		"tags": [
+			"chocolate",
+			"brown",
+			"rectangle"
+		]
+	},
+	"26": {
+		"description": [
+			"Tears now move forwards at right angles, shifting left and right across the room",
+			"Grants spectral tears",
+			"Increases your range stat by +10.0 while held but due to the fire pattern, your tears travel a similar distance to normal"
+		],
+		"title": "Hook Worm",
+		"id": "26",
+		"type": "trinket",
+		"subtitle": "Zip zoop!",
+		"tags": [
+			"white",
+			"snake",
+			"square"
+		]
+	},
+	"27": {
+		"description": [
+			"+0.5 Shot Speed Up",
+			"Your tears now whip across the room at a very high shot speed",
+			"Shot speed gives your tears more effective range, but doesn't increase your range stat directly"
+		],
+		"title": "Whip Worm",
+		"id": "27",
+		"type": "trinket",
+		"subtitle": "Wooosh!",
+		"tags": [
+			"snake",
+			"white"
+		]
+	},
+	"28": {
+		"description": [
+			"Has a 22.22% chance to respawn with 3 Soul hearts as Blue Baby when you die"
+		],
+		"title": "Broken Ankh",
+		"id": "28",
+		"type": "trinket",
+		"subtitle": "Eternal life?",
+		"unlock": "Unlock this item by beating Satan with Lazarus",
+		"tags": [
+			"ank",
+			"grey",
+			"gray"
+		]
+	},
+	"29": {
+		"description": [
+			"Everytime Isaac takes damage, one blue fly will spawn"
+		],
+		"title": "Fish Head",
+		"id": "29",
+		"type": "trinket",
+		"subtitle": "It stinks",
+		"tags": [
+			" the lost item pool",
+			"green",
+			"red",
+			"bloody",
+			"dead"
+		]
+	},
+	"30": {
+		"description": [
+			"Isaac's tears have a chance to poison enemies",
+			"The poison effect leaves a damage over time, which deals 4 or 6 damage per tick",
+			"The chance to poison enemies is affected by your luck stat and at +18 Luck it will activate every time"
+		],
+		"title": "Pinky Eye",
+		"id": "30",
+		"type": "trinket",
+		"subtitle": "Poison shots",
+		"tags": [
+			"red"
+		]
+	},
+	"31": {
+		"description": [
+			"Isaac now has a chance to make a spectral and piercing tear",
+			"The chance to fire a piercing tear is affected by your luck stat and at +18 Luck it will activate every time"
+		],
+		"title": "Push Pin",
+		"id": "31",
+		"type": "trinket",
+		"subtitle": "Piercing shots",
+		"tags": [
+			"blue"
+		]
+	},
+	"32": {
+		"description": [
+			"While held, this trinket gives a random mushroom effect each room",
+			"Possible mushrooms include: Mini Mush, Odd Mushroom (Thin), Odd Mushroom (Thick), The Compass"
+		],
+		"title": "Liberty Cap",
+		"id": "32",
+		"type": "trinket",
+		"subtitle": "Touch fuzzy, get dizzy!",
+		"tags": [
+			"ping",
+			"pong",
+			"paddle",
+			"grey",
+			"gray",
+			"mushroom"
+		]
+	},
+	"33": {
+		"description": [
+			"While at 1/2 a red heart of health, you gain a Little Steve familiar that follows you and shoots homing tears",
+			"REPENTANCE - Umbilical Cord now has a high chance to spawn a Gemini familiar for the room when Isaac takes damage. This effect is stackable"
+		],
+		"title": "Umbilical Cord",
+		"id": "33",
+		"type": "trinket",
+		"subtitle": "Fetal protection",
+		"tags": [
+			"the lost item pool",
+			"pink",
+			"red",
+			"guts",
+			"intestine",
+			"tube"
+		]
+	},
+	"34": {
+		"description": [
+			"Gives Isaac a higher chance to find hearts from drops after clearing a room and from chests"
+		],
+		"title": "Child's Heart",
+		"id": "34",
+		"type": "trinket",
+		"subtitle": "It calls out to its brothers",
+		"tags": [
+			" the lost item pool",
+			"red",
+			"purple",
+			"childs heart",
+			"child heart"
+		]
+	},
+	"35": {
+		"description": [
+			"+2 Damage Up"
+		],
+		"title": "Curved Horn",
+		"id": "35",
+		"type": "trinket",
+		"subtitle": "DMG up",
+		"unlock": "Unlock this item by beating the Dark Room with Judas",
+		"tags": [
+			"pink",
+			"purple",
+			"twisted"
+		]
+	},
+	"36": {
+		"description": [
+			"Gives Isaac a higher chance to find keys and chests"
+		],
+		"title": "Rusted Key",
+		"id": "36",
+		"type": "trinket",
+		"subtitle": "It feels lucky?",
+		"tags": [
+			"brown",
+			"wooden",
+			"broken"
+		]
+	},
+	"37": {
+		"description": [
+			"+0.15 Speed Up"
+		],
+		"title": "Goat Hoof",
+		"id": "37",
+		"type": "trinket",
+		"subtitle": "Speed up",
+		"tags": [
+			"grey",
+			"gray",
+			"bloody",
+			"square"
+		]
+	},
+	"38": {
+		"description": [
+			"Grants a secondary chance of any non-specific heart drop turning into a soul heart"
+		],
+		"title": "Mom's Pearl",
+		"id": "38",
+		"type": "trinket",
+		"subtitle": "It emanates purity",
+		"tags": [
+			" the lost item pool",
+			"white",
+			"grey",
+			"gray",
+			"circle",
+			"round",
+			"moms pearl"
+		]
+	},
+	"39": {
+		"description": [
+			"-2 Tear Delay (Tears Up)",
+			"The fire rate increase is applied in such a way that the higher your tear stat is, the more effective Cancer is",
+			"Breaks the normal fire rate cap, allowing you to fire faster than the normal maximum"
+		],
+		"title": "Cancer",
+		"id": "39",
+		"type": "trinket",
+		"subtitle": "Yay, cancer!",
+		"tags": [
+			"green",
+			"brown",
+			"red",
+			"saddle",
+			"tube"
+		]
+	},
+	"40": {
+		"description": [
+			"You have a chance when taking damage to gain +1.8 Damage Up for the rest of the room"
+		],
+		"title": "Red Patch",
+		"id": "40",
+		"type": "trinket",
+		"subtitle": "Your rage grows",
+		"tags": [
+			"the lost item pool"
+		]
+	},
+	"41": {
+		"description": [
+			"Gives Isaac a higher chance to find bombs",
+			"Picking up the Match Stick is the only way to remove the Tick trinket"
+		],
+		"title": "Match Stick",
+		"id": "41",
+		"type": "trinket",
+		"subtitle": "Tastes like burning",
+		"tags": [
+			"red",
+			"white"
+		]
+	},
+	"42": {
+		"description": [
+			"+1 Luck Up while held"
+		],
+		"title": "Lucky Toe",
+		"id": "42",
+		"type": "trinket",
+		"subtitle": "Luck up!",
+		"unlock": "Unlock this item by blowing up 20 shop keepers (this includes the ones in the secret room)",
+		"tags": [
+			"finger",
+			"thumb",
+			"nail",
+			"bone"
+		]
+	},
+	"43": {
+		"description": [
+			"When you take damage while on 1/2 a heart, you are teleported back to the previous room"
+		],
+		"title": "Cursed Skull",
+		"id": "43",
+		"type": "trinket",
+		"subtitle": "Cursed?",
+		"tags": [
+			" the lost item pool",
+			"head",
+			"bone",
+			"grey",
+			"gray"
+		]
+	},
+	"44": {
+		"description": [
+			"Gives Isaac a higher chance to find pills"
+		],
+		"title": "Safety Cap",
+		"id": "44",
+		"type": "trinket",
+		"subtitle": "Don't swallow it",
+		"tags": [
+			"white",
+			"pill"
+		]
+	},
+	"45": {
+		"description": [
+			"Gives Isaac a higher chance to find Tarot cards after clearing a room or from chests"
+		],
+		"title": "Ace of Spades",
+		"id": "45",
+		"type": "trinket",
+		"subtitle": "Luck of the draw",
+		"tags": [
+			"card"
+		]
+	},
+	"46": {
+		"description": [
+			"After clearing a room, you have a chance to heal for half a red heart"
+		],
+		"title": "Isaac's Fork",
+		"id": "46",
+		"type": "trinket",
+		"subtitle": "Consume thy enemy",
+		"tags": [
+			"the lost item pool",
+			"silver",
+			"metal",
+			"grey",
+			"gray",
+			"isaacs fork"
+		]
+	},
+	"48": {
+		"description": [
+			"When taking damage, Isaac has a chance to deal damage to the entire room in a Necronomicon style effect",
+			"The chance to damage enemies is affected by your luck stat and at +50 or more Luck it will activate 50% of the time"
+		],
+		"title": "A Missing Page",
+		"id": "48",
+		"type": "trinket",
+		"subtitle": "It glows with power",
+		"tags": [
+			" the lost item pool",
+			"pink",
+			"purple",
+			"paper",
+			"red"
+		]
+	},
+	"49": {
+		"description": [
+			"Everytime you pick up a penny, you have a chance to spawn a red heart on the floor"
+		],
+		"title": "Bloody Penny",
+		"id": "49",
+		"type": "trinket",
+		"subtitle": "Wealth of health",
+		"unlock": "Unlock this item by beating the Chest with Samson",
+		"tags": [
+			" the lost item pool",
+			"red",
+			"coin",
+			"cent",
+			"money"
+		]
+	},
+	"50": {
+		"description": [
+			"Everytime you pick up a coin, you have a 25% chance to spawn a bomb on the floor"
+		],
+		"title": "Burnt Penny",
+		"id": "50",
+		"type": "trinket",
+		"subtitle": "Wealth of chaos",
+		"unlock": "Unlock this item by beating Challenge #13 (Beans!)",
+		"tags": [
+			"money",
+			"silver",
+			"grey",
+			"gray",
+			"steam",
+			"smoke",
+			"cent"
+		]
+	},
+	"51": {
+		"description": [
+			"Everytime you pick up a coin, you have a 25% chance to spawn a key"
+		],
+		"title": "Flat Penny",
+		"id": "51",
+		"type": "trinket",
+		"subtitle": "Wealth of answers",
+		"tags": [
+			"white",
+			"grey",
+			"gray",
+			"coin",
+			"cent",
+			"money",
+			"cash"
+		]
+	},
+	"52": {
+		"description": [
+			"When picking up a coin, you have a chance to automatically gain one more coin"
+		],
+		"title": "Counterfeit Penny",
+		"id": "52",
+		"type": "trinket",
+		"subtitle": "Wealth of wealth",
+		"unlock": "Unlock this item by playing the shell game in the arcade 100 times",
+		"tags": [
+			"yellow",
+			"golden",
+			"coin",
+			"cent",
+			"money",
+			"cash",
+			"sparkle"
+		]
+	},
+	"53": {
+		"description": [
+			"When you enter a boss room, immediately remove 15% health from the boss and restore 1 red heart",
+			"This trinket cannot be dropped by holding the drop key or picking up other trinkets. The only way to remove it is via having a second trinket slot (Mom's Purse, Belly Button) or absorbing it (Marbles, Smelter, Gulp! pill) or picking up the Match Stick trinket, which will burn it off you"
+		],
+		"title": "Tick",
+		"id": "53",
+		"type": "trinket",
+		"subtitle": "Well, that's not coming off",
+		"tags": [
+			"insect",
+			"bug",
+			"spider",
+			"beetle",
+			"grey",
+			"gray",
+			"brown"
+		]
+	},
+	"54": {
+		"description": [
+			"While held, this trinket gives Isaac a familiar that shoots piercing tears that deal 3.5 damage"
+		],
+		"title": "Isaac's Head",
+		"id": "54",
+		"type": "trinket",
+		"subtitle": "Dead friend",
+		"unlock": "Unlock this item by beating the Boss Rush with Isaac",
+		"tags": [
+			"dead",
+			"crying",
+			"isaacs head"
+		]
+	},
+	"55": {
+		"description": [
+			"At the start of a new floor, you get an eternal heart"
+		],
+		"title": "Maggy's Faith",
+		"id": "55",
+		"type": "trinket",
+		"subtitle": "Faith's reward",
+		"unlock": "Unlock this item by beating the Dark Room with Maggy",
+		"tags": [
+			" the lost item pool",
+			"cross",
+			"yellow",
+			"golden",
+			"glow",
+			"maggys faith"
+		]
+	},
+	"56": {
+		"description": [
+			"Items which cost 2 heart containers in a deal with the devil are reduced to only cost 1 heart"
+		],
+		"title": "Judas' Tongue",
+		"id": "56",
+		"type": "trinket",
+		"subtitle": "Payment received",
+		"unlock": "Unlock this item by beating Satan with Judas",
+		"tags": [
+			" the lost item pool",
+			"tong",
+			"red",
+			"bloody",
+			"lips",
+			"judas tongue"
+		]
+	},
+	"57": {
+		"description": [
+			"Creates a familiar which moves around the room in a similar fashion to The Peeper, shooting tears in the same direction as Isaac"
+		],
+		"title": "???'s Soul",
+		"id": "57",
+		"type": "trinket",
+		"subtitle": "Imaginary friend",
+		"unlock": "Unlock this item by beating the Dark Room with Blue Baby",
+		"tags": [
+			"dead",
+			"baby",
+			"blue",
+			"???s soul",
+			"blue baby's soul",
+			"blue babys soul"
+		]
+	},
+	"58": {
+		"description": [
+			"When you kill an enemy, you have a chance to get +0.5 damage up for the current room"
+		],
+		"title": "Samson's Lock",
+		"id": "58",
+		"type": "trinket",
+		"subtitle": "Your rage grows",
+		"unlock": "Unlock this item by beating the Dark Room with Samson",
+		"tags": [
+			"hair",
+			"pony",
+			"tail",
+			"brown",
+			"red",
+			"samsons lock"
+		]
+	},
+	"59": {
+		"description": [
+			"Gives a 25% chance to reveal map icons at the start of a new floor (The same effect as the Compass)"
+		],
+		"title": "Cain's Eye",
+		"id": "59",
+		"type": "trinket",
+		"subtitle": "May you see your destination",
+		"unlock": "Unlock this item by beating the Chest with Cain",
+		"tags": [
+			"circle",
+			"white",
+			"black"
+		]
+	},
+	"60": {
+		"description": [
+			"When you kill an enemy, you have a chance to spawn a transparent Dead Bird familiar",
+			"The Dead Bird familiar deals 2 damage per tick to enemies while in contact with them"
+		],
+		"title": "Eve's Bird Foot",
+		"id": "60",
+		"type": "trinket",
+		"subtitle": "Revenge from beyond",
+		"unlock": "Unlock this item by beating the Isaac boss with Eve",
+		"tags": [
+			"grey",
+			"gray",
+			"black",
+			"striped",
+			"eves bird foot"
+		]
+	},
+	"61": {
+		"description": [
+			"Replaces chest spawns with red chests",
+			"REPENTANCE - No longer replaces chests that have already spawned"
+		],
+		"title": "The Left Hand",
+		"id": "61",
+		"type": "trinket",
+		"subtitle": "The left hand path reaps dark rewards",
+		"unlock": "Unlock this item by beating Ultra Pride",
+		"tags": [
+			"northernlion",
+			"drop the left hand",
+			"paw",
+			"bloody",
+			"bleeding",
+			"grey",
+			"gray"
+		]
+	},
+	"62": {
+		"description": [
+			"While held, tinted rocks and rocks with a crawlspace below them will flash white every 10 seconds"
+		],
+		"title": "Shiny Rock",
+		"id": "62",
+		"type": "trinket",
+		"subtitle": "It shines for it's brothers",
+		"tags": [
+			"grey",
+			"gray",
+			"silver",
+			"lump",
+			"metal",
+			"stone"
+		]
+	},
+	"63": {
+		"description": [
+			"Turns all troll bombs into bombs which you can pick up and use",
+			"Super Troll bombs turn into 1+1 free double bomb pickups"
+		],
+		"title": "Safety Scissors",
+		"id": "63",
+		"type": "trinket",
+		"subtitle": "Fuse cutter",
+		"tags": [
+			"blue",
+			"metal",
+			"sissors"
+		]
+	},
+	"64": {
+		"description": [
+			"Gives your tears a random worm effect every few seconds",
+			"The possible tear effects include: Whip Worm, Ring Worm, Wiggle Worm, Flat Worm, Hook Worm, Pulse Worm, Tape Worm and Lazy Worm"
+		],
+		"title": "Rainbow Worm",
+		"id": "64",
+		"type": "trinket",
+		"subtitle": "Bleep bloop blop",
+		"tags": [
+			"lgbt",
+			"circle",
+			"snake",
+			"red",
+			"green",
+			"blue"
+		]
+	},
+	"65": {
+		"description": [
+			"While held, Tape Worm doubles your range stat and halves your tear height stat"
+		],
+		"title": "Tape Worm",
+		"id": "65",
+		"type": "trinket",
+		"subtitle": "Floooooooooop!",
+		"tags": [
+			"intestine",
+			"white",
+			"snake"
+		]
+	},
+	"66": {
+		"description": [
+			"-0.4 Shot Speed Down",
+			"+4.0 Range Up",
+			"+2.0 Tear Height"
+		],
+		"title": "Lazy Worm",
+		"id": "66",
+		"type": "trinket",
+		"subtitle": "Pft",
+		"tags": [
+			"circle",
+			"button",
+			"eyes",
+			"white"
+		]
+	},
+	"67": {
+		"description": [
+			"Every time you get hit, you have a chance to activate the D6, D20, D8 or D12 effect"
+		],
+		"title": "Cracked Dice",
+		"id": "67",
+		"type": "trinket",
+		"subtitle": "You feel cursed... kinda.",
+		"unlock": "Unlock this item by beating Greed Mode with ???",
+		"tags": [
+			"stone",
+			"rock",
+			"grey",
+			"gray",
+			"white",
+			"dice",
+			"pip",
+			"broken",
+			"die"
+		]
+	},
+	"68": {
+		"description": [
+			"While held this trinket causes all pickups and enemies to move slowly towards you",
+			"Will also attract the Mom's Foot and Ultra Greed door entities"
+		],
+		"title": "Super Magnet",
+		"id": "68",
+		"type": "trinket",
+		"subtitle": "It pulls",
+		"tags": [
+			"white",
+			"grey",
+			"gray",
+			"pill",
+			"medicine",
+			"drug"
+		]
+	},
+	"69": {
+		"description": [
+			"Randomly Isaac will gain a camouflage for a few seconds and all enemies in the current room will have a confused status effect applied to them",
+			"This trinket can be used to open the door to Mausoleum in Depths II"
+		],
+		"title": "Faded Polaroid",
+		"id": "69",
+		"type": "trinket",
+		"subtitle": "You feel faded",
+		"tags": [
+			"photo",
+			"family",
+			"old"
+		]
+	},
+	"70": {
+		"description": [
+			"Gives a small chance to spawn a friendly attack spider while in a hostile room with enemies"
+		],
+		"title": "Louse",
+		"id": "70",
+		"type": "trinket",
+		"subtitle": "Itchy, tasty...",
+		"tags": [
+			"bug",
+			"insect",
+			"pink",
+			"legs"
+		]
+	},
+	"71": {
+		"description": [
+			"Leaves a pool of green creep under all bombs you place, which damages enemies that walk over it"
+		],
+		"title": "Bob's Bladder",
+		"id": "71",
+		"type": "trinket",
+		"subtitle": "Creepy bombs",
+		"tags": [
+			"green",
+			"bogey",
+			"snot",
+			"ocarina",
+			"bobs bladder",
+			"bob bladder"
+		]
+	},
+	"72": {
+		"description": [
+			"Gives a +6.66% chance of a getting a small battery after clearing a room",
+			"Gives a +2.0% chance for pickups to be small batteries",
+			"Gives a +5.0% chance to add an extra charge to your active item after clearing a room"
+		],
+		"title": "Watch Battery",
+		"id": "72",
+		"type": "trinket",
+		"subtitle": "Lil charge",
+		"tags": [
+			"metal",
+			"grey",
+			"gray",
+			"silver",
+			"pill",
+			"cross"
+		]
+	},
+	"73": {
+		"description": [
+			"Exploding bombs now have a chance to drop another bomb that you can pick up"
+		],
+		"title": "Blasting Cap",
+		"id": "73",
+		"type": "trinket",
+		"subtitle": "Pop! Pop!",
+		"tags": [
+			"orange",
+			"red",
+			"circle"
+		]
+	},
+	"74": {
+		"description": [
+			"Higher chance to find crawl spaces when exploding rocks"
+		],
+		"title": "Stud Finder",
+		"id": "74",
+		"type": "trinket",
+		"subtitle": "The ground below feels hollow...",
+		"unlock": "Unlock this trinket by beating Challenge #27 (Brains)",
+		"tags": [
+			"toe",
+			"finger",
+			"thumb",
+			"grey",
+			"gray",
+			"black",
+			"red",
+			"yellow"
+		]
+	},
+	"75": {
+		"description": [
+			"Gives a different trinket effect per room, randomly choosing between any of the other available trinkets in the game",
+			"Each room is locked to a specific trinket effect, meaning if you exit and re-enter a room, that specific room will always have the same effect."
+		],
+		"title": "Error",
+		"id": "75",
+		"type": "trinket",
+		"subtitle": "Effect not found?",
+		"tags": [
+			"404",
+			"red"
+		]
+	},
+	"76": {
+		"description": [
+			"Chests now have a 50/50 chance to either pay out with extra consumables or nothing/an enemy"
+		],
+		"title": "Poker Chip",
+		"id": "76",
+		"type": "trinket",
+		"subtitle": "It's double down time!",
+		"unlock": "Unlock this trinket by beating Challenge #26 (I Rule)",
+		"tags": [
+			"red",
+			"white",
+			"circle",
+			"pill",
+			"bow"
+		]
+	},
+	"77": {
+		"description": [
+			"Tears have a stronger knockback effect while this trinket is held"
+		],
+		"title": "Blister",
+		"id": "77",
+		"type": "trinket",
+		"subtitle": "Bounce back!",
+		"tags": [
+			"white",
+			"lump",
+			"circle",
+			"hairy"
+		]
+	},
+	"78": {
+		"description": [
+			"Increases the time that status effects stay on enemies. e.g. With poison effects, the damage over time poison will last for much longer."
+		],
+		"title": "Second Hand",
+		"id": "78",
+		"type": "trinket",
+		"subtitle": "Extended stat effect time",
+		"tags": [
+			"red",
+			"stick",
+			"dynamite",
+			"tnt",
+			"rod"
+		]
+	},
+	"79": {
+		"description": [
+			"While held there is a small chance when using a tarot card or pill that a copy of it will be dropped on the floor next to you"
+		],
+		"title": "Endless Nameless",
+		"id": "79",
+		"type": "trinket",
+		"subtitle": "I'm stuck in a loop...",
+		"tags": [
+			"grey",
+			"gray",
+			"black",
+			"infinity",
+			"oo"
+		]
+	},
+	"80": {
+		"description": [
+			"+0.2 Damage Up for each 'evil' item you have",
+			"Items classed as evil in this case are Black Candle, Ceremonial Robes, Abaddon, Goat Head, Match Book, Missing Page 2, Safety Pin"
+		],
+		"title": "Black Feather",
+		"id": "80",
+		"type": "trinket",
+		"subtitle": "With darkness comes power",
+		"unlock": "Unlock this item by beating Greed Mode with Eve",
+		"tags": [
+			"grey",
+			"gray",
+			"leaf"
+		]
+	},
+	"81": {
+		"description": [
+			"Invincibility lasts longer after getting hit (Increased i-frames)",
+			"This makes it possible to use the Blood Donation machine twice from one hit of damage"
+		],
+		"title": "Blind Rage",
+		"id": "81",
+		"type": "trinket",
+		"subtitle": "Blind to damage",
+		"unlock": "Unlock this item by beating Blue Womb (Hush) with Samson",
+		"tags": [
+			"bandana",
+			"sling",
+			"white",
+			"knot",
+			"blindfold"
+		]
+	},
+	"82": {
+		"description": [
+			"+15% chance to get a double item room to spawn on the next floor",
+			"If the effect activates, two items spawn in your item room, however only one can be taken (Same effect as the More Options item)",
+			"The chance doubles to +30% with the effect from Mom's Box"
+		],
+		"title": "Golden Horse Shoe",
+		"id": "82",
+		"type": "trinket",
+		"subtitle": "Feel lucky?",
+		"tags": [
+			"yellow",
+			"u",
+			"magnet"
+		]
+	},
+	"83": {
+		"description": [
+			"Automatically opens all shop room doors for free"
+		],
+		"title": "Store Key",
+		"id": "83",
+		"type": "trinket",
+		"subtitle": "Stores are open",
+		"unlock": "Keeper starts with this trinket after beating Satan with Keeper",
+		"tags": [
+			"starting",
+			"grey",
+			"gray",
+			"metal"
+		]
+	},
+	"84": {
+		"description": [
+			"Forces the Greed and Super Greed mini bosses to no longer appear in shops or secret rooms",
+			"Holding Rib of Greed increase your chance to receive coin drops"
+		],
+		"title": "Rib of Greed",
+		"id": "84",
+		"type": "trinket",
+		"subtitle": "Feels greedy",
+		"unlock": "Unlock this trinket by beating Ultra Greed with Keeper",
+		"tags": [
+			"white",
+			"trunk",
+			"bent"
+		]
+	},
+	"85": {
+		"description": [
+			"Donating to a Donation Machine has a chance to heal Isaac for a full red heart or spawn a Beggar"
+		],
+		"title": "Karma",
+		"id": "85",
+		"type": "trinket",
+		"subtitle": "Karma up",
+		"unlock": "Unlock this item by beating The Lamb boss with Keeper",
+		"tags": [
+			"black",
+			"three",
+			"spiral"
+		]
+	},
+	"86": {
+		"description": [
+			"Destroying poops now gives you a blue fly"
+		],
+		"title": "Lil Larva",
+		"id": "86",
+		"type": "trinket",
+		"subtitle": "the poop is moving...",
+		"tags": [
+			"white",
+			"grey",
+			"gray",
+			"bent"
+		]
+	},
+	"87": {
+		"description": [
+			"While held, you heal for half a red heart every time you use a key to open a door or golden chest",
+			"Changes all half red hearts into full hearts"
+		],
+		"title": "Mom's Locket",
+		"id": "87",
+		"type": "trinket",
+		"subtitle": "you feel her love",
+		"tags": [
+			"red",
+			"brown",
+			"grey",
+			"gray",
+			"necklace",
+			"moms locket",
+			"mom locket"
+		]
+	},
+	"88": {
+		"description": [
+			"While this trinket is held you have a significantly lower chance to find spacebar/active items",
+			"It will cause passive items to spawn except when the game cannot generate any more passive items and will then instead choose spacebar/active items",
+			"Some hard coded spacebar items from bosses and mini-bosses (i.e. Krampus Head) can still spawn",
+			"Bible drops caused by the Rosary item are not prevented by this trinket"
+		],
+		"title": "NO!",
+		"id": "88",
+		"type": "trinket",
+		"subtitle": "Never again!",
+		"tags": [
+			"stop",
+			"red",
+			"circle",
+			"line",
+			"cross",
+			"entry",
+			"warning"
+		]
+	},
+	"89": {
+		"description": [
+			"Causes your familiars to stay closer to each other"
+		],
+		"title": "Child Leash",
+		"id": "89",
+		"type": "trinket",
+		"subtitle": "Keep your friends close...",
+		"tags": [
+			"ribbon",
+			"green",
+			"blue"
+		]
+	},
+	"90": {
+		"description": [
+			"Poop in the environment will now explode when destroyed"
+		],
+		"title": "Brown Cap",
+		"id": "90",
+		"type": "trinket",
+		"subtitle": "Fartoom!",
+		"tags": [
+			"circle",
+			"rectangle"
+		]
+	},
+	"91": {
+		"description": [
+			"While held you have an increased chance for Black Poops to spawn, which deal damage to all enemies in the room when destroyed",
+			"Gives The Poop active item a chance to spawn a Black Poop too"
+		],
+		"title": "Meconium",
+		"id": "91",
+		"type": "trinket",
+		"subtitle": "Eww",
+		"unlock": "Unlock this trinket by defeating Greedier Mode with ???",
+		"tags": [
+			"black",
+			"grey",
+			"gray",
+			"poop"
+		]
+	},
+	"92": {
+		"description": [
+			"Gives you extra stat upgrades based on the items you've already collected that have stat increases, at +20% of the item's original increase",
+			"REPENTANCE - Reduced Cracked Crown's stat bonuses to +20% (from +33%) and removed the flat independent tears upgrade from it"
+		],
+		"title": "Cracked Crown",
+		"id": "92",
+		"type": "trinket",
+		"subtitle": "Boost Stats",
+		"tags": [
+			"broken",
+			"damaged",
+			"yellow",
+			"golden"
+		]
+	},
+	"93": {
+		"description": [
+			"While held, gives the Skatole effect only in certain rooms, which will turn hostile flies to neutral and stop others from shooting",
+			"Attack, Dart and Ring Flies turn into neutral Black Flies and Pooters and Fat Flies will no longer fire at you"
+		],
+		"title": "Used Diaper",
+		"id": "93",
+		"type": "trinket",
+		"subtitle": "You Stink",
+		"tags": [
+			"circle",
+			"white",
+			"fly",
+			"brown",
+			"poop"
+		]
+	},
+	"94": {
+		"description": [
+			"Items and trinkets which generate blue flies and spiders will have double the effect, causing twice as many to spawn"
+		],
+		"title": "Fish Tail",
+		"id": "94",
+		"type": "trinket",
+		"subtitle": "It also stinks!",
+		"tags": [
+			"grey",
+			"gray",
+			"green",
+			"arrow",
+			"flower",
+			"plant"
+		]
+	},
+	"95": {
+		"description": [
+			"Some tears will randomly become a black tooth, that deal double your normal tear damage and can poison enemies"
+		],
+		"title": "Black Tooth",
+		"id": "95",
+		"type": "trinket",
+		"subtitle": "It looks dead",
+		"tags": [
+			"grey",
+			"gray",
+			"horn"
+		]
+	},
+	"96": {
+		"description": [
+			"Tears become spectral and travel in a large spiral pattern",
+			"+4.0 Range Up"
+		],
+		"title": "Ouroboros Worm",
+		"id": "96",
+		"type": "trinket",
+		"subtitle": "Foop foop!",
+		"tags": [
+			"grey",
+			"gray",
+			"brown",
+			"circle",
+			"snake"
+		]
+	},
+	"97": {
+		"description": [
+			"Every time you take damage you have a very small chance to gain a Tonsil familiar, which follows you and blocks enemy projectiles",
+			"This effect can happen twice before the Tonsil trinket is destroyed",
+			"Does not deal contact damage to enemies"
+		],
+		"title": "Tonsil",
+		"id": "97",
+		"type": "trinket",
+		"subtitle": "Sick...",
+		"tags": [
+			"pink",
+			"bloody",
+			"brain"
+		]
+	},
+	"98": {
+		"description": [
+			"Your tears have a random chance to become booger tears",
+			"Booger tears stick on to enemies and deal periodic poison damage until they die or 60 seconds passes. Each tick of poison damage is equal to your normal tear damage",
+			"The boogers will have a homing effect"
+		],
+		"title": "Nose Goblin",
+		"id": "98",
+		"type": "trinket",
+		"subtitle": "Seems magic...",
+		"tags": [
+			"green",
+			"snot",
+			"booger",
+			"bogey",
+			"slime"
+		]
+	},
+	"99": {
+		"description": [
+			"Some random tears will gain the Rubber Cement effect and become bouncy"
+		],
+		"title": "Super Ball",
+		"id": "99",
+		"type": "trinket",
+		"subtitle": "Boing!",
+		"tags": [
+			"yellow",
+			"orange",
+			"red",
+			"circle",
+			"stripe"
+		]
+	},
+	"100": {
+		"description": [
+			"Grants +0.25 Speed, +0.75 Range, +0.1 Shot Speed, +0.2 Tears, +0.5 Damage and +1 Luck when Isaac's active item is fully charged",
+			"Infinite use items such as Potato Peeler count as charged and provide the bonus from this trinket"
+		],
+		"title": "Vibrant Bulb",
+		"id": "100",
+		"type": "trinket",
+		"subtitle": "It needs power",
+		"tags": [
+			"yellow",
+			"light"
+		]
+	},
+	"101": {
+		"description": [
+			"Grants +0.5 Speed, +1.5 Range, +0.3 Shot Speed, +0.4 Tears, +1.5 Damage when Isaac's active item is completely uncharged",
+			"One-time use items such as Mama Mega count as uncharged and provide the bonus from this trinket"
+		],
+		"title": "Dim Bulb",
+		"id": "101",
+		"type": "trinket",
+		"subtitle": "I think it's broken",
+		"tags": [
+			"grey",
+			"gray",
+			"light"
+		]
+	},
+	"102": {
+		"description": [
+			"Gives you another secret room on each new floor while held",
+			"Does not spawn more than one super secret room, only the normal secret room"
+		],
+		"title": "Fragmented Card",
+		"id": "102",
+		"type": "trinket",
+		"subtitle": "Double moon",
+		"tags": [
+			"purple",
+			"torn",
+			"ripped",
+			"paper",
+			"page",
+			"poster"
+		]
+	},
+	"103": {
+		"description": [
+			"When you have the same amount of coins, bombs and keys, half consumables turn into their doubled version",
+			"This effect works for any number of consumables, including 0 and 99, as long as the count for coins/keys/bombs is equal"
+		],
+		"title": "Equality!",
+		"id": "103",
+		"type": "trinket",
+		"subtitle": "=",
+		"tags": [
+			"red",
+			"lines",
+			"redpill"
+		]
+	},
+	"104": {
+		"description": [
+			"Every time you take damage you have a very small chance to spawn a random pedestal item",
+			"When the effect triggers, the trinket is destroyed"
+		],
+		"title": "Wish Bone",
+		"id": "104",
+		"type": "trinket",
+		"subtitle": "Make a wish",
+		"tags": [
+			"grey",
+			"gray",
+			"claw",
+			"rib"
+		]
+	},
+	"105": {
+		"description": [
+			"Every time you take damage you have a very small chance to spawn the Lunch item, which gives +1 HP up",
+			"When the effect triggers, this trinket is destroyed"
+		],
+		"title": "Bag Lunch",
+		"id": "105",
+		"type": "trinket",
+		"subtitle": "I wonder what it is",
+		"tags": [
+			"brown",
+			"sack",
+			"hoof"
+		]
+	},
+	"106": {
+		"description": [
+			"Increases the radius of any creep you produce"
+		],
+		"title": "Lost Cork",
+		"id": "106",
+		"type": "trinket",
+		"subtitle": "Uncorked",
+		"tags": [
+			"brown",
+			"yellow",
+			"orange",
+			"black"
+		]
+	},
+	"107": {
+		"description": [
+			"While held, any damage taken remove red hearts first, before soul hearts, black hearts and rotten heart damage",
+			"While at 1/2 of a red heart, it will begin to remove your other hearts again"
+		],
+		"title": "Crow Heart",
+		"id": "107",
+		"type": "trinket",
+		"subtitle": "Drain me",
+		"unlock": "Unlock this item by beating Greedier mode with Eve",
+		"tags": [
+			"crow's",
+			"purple",
+			"blue",
+			"bloody"
+		]
+	},
+	"108": {
+		"description": [
+			"The Walnut has a chance to break when taking damage from an explosion. If it does, it will drop a random trinket, coin, heart and key",
+			"The Walnut trinket is destroyed once the effect activates"
+		],
+		"title": "Walnut",
+		"id": "108",
+		"type": "trinket",
+		"subtitle": "Thats a hard nut to crack!",
+		"tags": [
+			"brown",
+			"brain",
+			"stone",
+			"rock"
+		]
+	},
+	"109": {
+		"description": [
+			"Causes any orbitals you have to stop moving while held",
+			"Stops shooting familiars from moving (including Lilith's Incubus)",
+			"Some familiars with irregular movement are not affected by Duct Tape, such as Abel, BBF, Bumbo, Guppy's Hair Ball, Lil Gurdy, Punching Bag, Robo-Baby 2.0, Succubus"
+		],
+		"title": "Duct Tape",
+		"id": "109",
+		"type": "trinket",
+		"subtitle": "Stuck!",
+		"tags": [
+			"grey",
+			"gray",
+			"tp",
+			"toilet",
+			"paper",
+			"roll",
+			"silver"
+		]
+	},
+	"110": {
+		"description": [
+			"While held, shops will now appear on the womb floors (The Womb, Utero and Scarred Womb)"
+		],
+		"title": "Silver Dollar",
+		"id": "110",
+		"type": "trinket",
+		"subtitle": "Feels lucky...",
+		"unlock": "Unlock this item by defeating Delirium in The Void floor with Cain",
+		"tags": [
+			"coin",
+			"money",
+			"cash",
+			"cent"
+		]
+	},
+	"111": {
+		"description": [
+			"While held, item rooms now appear on the womb floors (The Womb, Utero and Scarred Womb)",
+			"REPENTANCE - Causes item rooms to appear on Corpse floors"
+		],
+		"title": "Bloody Crown",
+		"id": "111",
+		"type": "trinket",
+		"subtitle": "Drips with blood...",
+		"unlock": "Unlock this item by defeating Delirium in The Void floor with Samson",
+		"tags": [
+			"red",
+			"dripping"
+		]
+	},
+	"112": {
+		"description": [
+			"While held, restock boxes will always spawn in item rooms"
+		],
+		"title": "Pay To Win",
+		"id": "112",
+		"type": "trinket",
+		"subtitle": "...",
+		"tags": [
+			"cent",
+			"money",
+			"cash",
+			"coin",
+			"pixel",
+			"blue",
+			"green",
+			"p2w"
+		]
+	},
+	"113": {
+		"description": [
+			"Upon entering a room with enemies, spawns a Red Locust which detonates upon impact with enemies, dealing double tear damage for the impact of the Locust and 60 damage for the explosion",
+			"Can be dangerous as the fly will target the nearest enemy, which can be close enough to catch Isaac in its blast radius"
+		],
+		"title": "Locust of War",
+		"id": "113",
+		"type": "trinket",
+		"subtitle": "I Bring Wrath",
+		"unlock": "Unlock this trinket by defeating Isaac in the Cathedral as Apollyon",
+		"tags": [
+			"red",
+			"wings",
+			"fly",
+			"locust of wrath"
+		]
+	},
+	"114": {
+		"description": [
+			"At the start of each new hostile room you spawn a green attack fly, which will target a nearby enemy, deal double your tear damage and then poison them"
+		],
+		"title": "Locust of Pestilence",
+		"id": "114",
+		"type": "trinket",
+		"subtitle": "I Bring Pestilence",
+		"unlock": "Unlock this item by beating Satan with Apollyon",
+		"tags": [
+			"green",
+			"wings",
+			"fly"
+		]
+	},
+	"115": {
+		"description": [
+			"At the start of each new hostile room you spawn a yellow attack fly, which will target a nearby enemy, deal double your tear damage and apply a slowing effect to it"
+		],
+		"title": "Locust of Famine",
+		"id": "115",
+		"type": "trinket",
+		"subtitle": "I bring Famine",
+		"unlock": "Unlock this trinket by defeating ??? in The Chest as Apollyon",
+		"tags": [
+			"brown",
+			"wings",
+			"fly"
+		]
+	},
+	"116": {
+		"description": [
+			"Upon entering a room with enemies, spawns a Black Locust that deals quadruple Isaac's damage, applied as two hits of double damage"
+		],
+		"title": "Locust of Death",
+		"id": "116",
+		"type": "trinket",
+		"subtitle": "I bring Death",
+		"unlock": "Unlock this trinket by defeating The Lamb as Apollyon",
+		"tags": [
+			"grey",
+			"gray",
+			"black",
+			"wings",
+			"fly"
+		]
+	},
+	"117": {
+		"description": [
+			"At the start of each new hostile room you spawn 2-5 white attack flies, which will target a nearby enemy and deal double your tear damage to it"
+		],
+		"title": "Locust of Conquest",
+		"id": "117",
+		"type": "trinket",
+		"subtitle": "I Bring Conquest",
+		"unlock": "Unlock this trinket by defeating Boss Rush as Apollyon",
+		"tags": [
+			"white",
+			"wings",
+			"fly"
+		]
+	},
+	"118": {
+		"description": [
+			"When killing an enemy, you have a very small chance to gain the ability to fly for the rest of the room"
+		],
+		"title": "Bat Wing",
+		"id": "118",
+		"type": "trinket",
+		"subtitle": "They Are Growing...",
+		"unlock": "Unlock this trinket by defeating Greedier Mode with Azazel",
+		"tags": [
+			"black",
+			"grey",
+			"gray"
+		]
+	},
+	"119": {
+		"description": [
+			"Sets your red Hearts to 50% of maximum upon traveling to the next floor",
+			"If your health is already equal to or above 50%, it heals half a Red Heart instead"
+		],
+		"title": "Stem Cell",
+		"id": "119",
+		"type": "trinket",
+		"subtitle": "Regen!",
+		"unlock": "Unlock this trinket by defeating Greedier Mode with Samson",
+		"tags": [
+			"red",
+			"pink",
+			"orange",
+			"eye",
+			"circle"
+		]
+	},
+	"120": {
+		"description": [
+			"Fully recharges your active item at the start of each boss fight",
+			"Added as part of the Afterbirth+ Booster Pack #1 and based on the Steam Workshop mod created by Zaratus"
+		],
+		"title": "Hairpin",
+		"id": "120",
+		"type": "trinket",
+		"subtitle": "Poke that power outlet! Bosses charge you",
+		"tags": [
+			"yellow",
+			"whip",
+			"glow",
+			"black"
+		]
+	},
+	"121": {
+		"description": [
+			"Gives you the Holy Mantle shield effect at the start of every new floor, which protects you from the next hit of damage you take",
+			"Does not recharge until the start of the next floor",
+			"Added as part of the Afterbirth+ Booster Pack #1 and based on the Steam Workshop mod created by Ep and Mills"
+		],
+		"title": "Wooden Cross",
+		"id": "121",
+		"type": "trinket",
+		"subtitle": "My faith protects me",
+		"tags": [
+			"brown",
+			"crucifix"
+		]
+	},
+	"122": {
+		"description": [
+			"Using your active item while holding this trinket will drop it back on a pedestal on the ground",
+			"Also after taking damage, you have a very small chance to drop one of your passive items",
+			"One-time use active items will be consumed and not dropped",
+			"Added as part of the Afterbirth+ Booster Pack #1 and based on the Steam Workshop mod created by MarkusLeben and iguesti"
+		],
+		"title": "Butter!",
+		"id": "122",
+		"type": "trinket",
+		"subtitle": "Can't hold it!",
+		"tags": [
+			"yellow",
+			"golden",
+			"box",
+			"block",
+			"square",
+			"cube"
+		]
+	},
+	"123": {
+		"description": [
+			"Holding this trinket will cause the Angel mini bosses to drop normal items instead of Key Pieces",
+			"Added as part of the Afterbirth+ Booster Pack #2, designed by Edmund McMillen"
+		],
+		"title": "Filigree Feather",
+		"id": "123",
+		"type": "trinket",
+		"subtitle": "Angelic spoils!",
+		"tags": [
+			"silver",
+			"grey",
+			"gray",
+			"white",
+			"quill"
+		]
+	},
+	"124": {
+		"description": [
+			"While held, the last door Isaac went through stays open, allowing him to leave the room even if enemies are in it",
+			"This trinket works on boss rooms (except Ultra Greed) and devil rooms containing Krampus, allowing you to exit out mid-fight"
+		],
+		"title": "Door Stop",
+		"id": "124",
+		"type": "trinket",
+		"subtitle": "Hold the door!",
+		"tags": [
+			"door",
+			"stop",
+			"wedge",
+			"cheese",
+			"wood",
+			"brown",
+			"hodor",
+			"game of thrones",
+			"Wylis"
+		]
+	},
+	"125": {
+		"description": [
+			"After being picked up, a yellow laser chain now flows through Isaac's familiars",
+			"Added as part of the Afterbirth+ Booster Pack #4 and based on the Steam Workshop mod created by Strawrat and Aczom"
+		],
+		"title": "Extension Cord",
+		"id": "125",
+		"type": "trinket",
+		"subtitle": "Charged friends",
+		"tags": [
+
+		]
+	},
+	"126": {
+		"description": [
+			"While held, spawns +1 friendly blue fly every time you pick up a coin",
+			"Added as part of the Afterbirth+ Booster Pack #5. Based on the Steam Workshop mod created by Eufuu"
+		],
+		"title": "Rotten Penny",
+		"id": "126",
+		"type": "trinket",
+		"subtitle": "Wealth of flies",
+		"unlock": "Unlock this trinket by having a lot of blue flies at once",
+		"tags": [
+
+		]
+	},
+	"127": {
+		"description": [
+			"While held this trinket gives your familiars homing shots",
+			"Added as part of the Afterbirth+ Booster Pack #5. Based on the Steam Workshop mod created by Ink Tears"
+		],
+		"title": "Baby-Bender",
+		"id": "127",
+		"type": "trinket",
+		"subtitle": "Feed them magic!",
+		"unlock": "Unlock this item by having two items or effects that grant homing shots at once (e.g. Spoon Bender, Telepathy for Dummies, I - The Magician)",
+		"tags": [
+			"baby bender babybender"
+		]
+	},
+	"128": {
+		"description": [
+			"While held, gives you a small chance to gain a bone heart everytime you take damage",
+			"Added as part of the Afterbirth+ Booster Pack #5",
+			"REPENTANCE - Finger Bone's chance to grant a bone heart has been increased to 5% per hit taken (from 2%)"
+		],
+		"title": "Finger Bone",
+		"id": "128",
+		"type": "trinket",
+		"subtitle": "It looks brittle",
+		"unlock": "Unlock this trinket by defeating Ultra Greed as The Forgotten",
+		"tags": [
+
+		]
+	},
+	"129": {
+		"description": [
+			"Tears have a chance to become a tooth, dealing more than triple damage"
+		],
+		"title": "Jawbreaker",
+		"id": "129",
+		"type": "trinket",
+		"subtitle": "Don't chew on it",
+		"tags": [
+
+		]
+	},
+	"130": {
+		"description": [
+			"Tears have a chance to slow enemies"
+		],
+		"title": "Chewed Pen",
+		"id": "130",
+		"type": "trinket",
+		"subtitle": "It's leaking",
+		"tags": [
+
+		]
+	},
+	"131": {
+		"description": [
+			"Chance to spawn half a soul heart when picking up a coin",
+			"The chance scales up based on the coin's worth: Penny = 16.66%, Double Penny = 30.5%, Nickel = 59.7%, Dime = 83.3%"
+		],
+		"title": "Blessed Penny",
+		"id": "131",
+		"type": "trinket",
+		"subtitle": "Wealth of purity",
+		"unlock": "Unlock this trinket by defeating ??? as Bethany",
+		"tags": [
+
+		]
+	},
+	"132": {
+		"description": [
+			"Gives you a random syringe effect every room",
+			"The effect can be The Virus, Roid Rage, Speed Ball, Experimental Treatment, Synthoil, Euthanasia or Growth Hormones"
+		],
+		"title": "Broken Syringe",
+		"id": "132",
+		"type": "trinket",
+		"subtitle": "Mystery medicine",
+		"tags": [
+
+		]
+	},
+	"133": {
+		"description": [
+			"Placed bombs explode almost instantly",
+			"This was called Exploded Firecracker in Antibirth"
+		],
+		"title": "Short Fuse",
+		"id": "133",
+		"type": "trinket",
+		"subtitle": "Short fuse",
+		"tags": [
+
+		]
+	},
+	"134": {
+		"description": [
+			"Farts produced by Isaac or familiars will be twice as large"
+		],
+		"title": "Gigante Bean",
+		"id": "134",
+		"type": "trinket",
+		"subtitle": "Mega farts",
+		"tags": [
+
+		]
+	},
+	"135": {
+		"description": [
+			"Chance for enemies to burn when entering a room",
+			"The chance for this effect to activate is effected by your Luck stat"
+		],
+		"title": "A Lighter",
+		"id": "135",
+		"type": "trinket",
+		"subtitle": "Watch the world burn",
+		"tags": [
+
+		]
+	},
+	"136": {
+		"description": [
+			"Explosions can open locked doors",
+			"This includes key blocks and golden chests"
+		],
+		"title": "Broken Padlock",
+		"id": "136",
+		"type": "trinket",
+		"subtitle": "Bombs are key",
+		"tags": [
+
+		]
+	},
+	"137": {
+		"description": [
+			"Pickups left on current floor will appear in the starting room of the next floor, up to a maximum of 4 pickups"
+		],
+		"title": "Myosotis",
+		"id": "137",
+		"type": "trinket",
+		"subtitle": "Forget me not...",
+		"tags": [
+
+		]
+	},
+	"138": {
+		"description": [
+			"Active items will be rerolled upon using them",
+			"Using with Book of Virtues will only reroll the item the book is holding",
+			"Has no effect with Notched Axe due to how its durability works"
+		],
+		"title": "'M",
+		"id": "138",
+		"type": "trinket",
+		"subtitle": "t's broken9Reroll your dest       ",
+		"unlock": "Unlock this trinket by defeating Mother as Eden",
+		"tags": [
+
+		]
+	},
+	"139": {
+		"description": [
+			"Random luck-based tear effects have an extra chance of occurring",
+			"The additional chance is effectively +3 Luck Up"
+		],
+		"title": "Teardrop Charm",
+		"id": "139",
+		"type": "trinket",
+		"subtitle": "It feels lucky",
+		"tags": [
+
+		]
+	},
+	"140": {
+		"description": [
+			"Picking up red hearts now has a high chance to spawn 1-4 blue attack spiders, instead of giving you health back",
+			"This effect also works while fully healed, giving a guaranteed chance of getting spiders",
+			"While missing any red health the chance for spiders is less",
+			"Works for characters that don't use red health, which always gives you spiders",
+			"Hearts in Shops can be converted into spiders for free"
+		],
+		"title": "Apple of Sodom",
+		"id": "140",
+		"type": "trinket",
+		"subtitle": "It feels empty",
+		"tags": [
+
+		]
+	},
+	"141": {
+		"description": [
+			"Gives your familiars improved rate of fire while held",
+			"In Antibirth this trinket was called Song of the Siren"
+		],
+		"title": "Forgotten Lullaby",
+		"id": "141",
+		"type": "trinket",
+		"subtitle": "Sing for your friends",
+		"unlock": "Unlock this trinket by bombing the skull left by The Siren boss after her death",
+		"tags": [
+
+		]
+	},
+	"142": {
+		"description": [
+			"While held at the start of each floor, this trinket spawns four wisp familiar orbitals around Isaac",
+			"These wisps are the same as the ones created by the Book of Virtues item"
+		],
+		"title": "Beth's Faith",
+		"id": "142",
+		"type": "trinket",
+		"subtitle": "My faith protects me",
+		"unlock": "Unlock this trinket by beating the Boss Rush as Bethany",
+		"tags": [
+			"beths faith"
+		]
+	},
+	"143": {
+		"description": [
+			"Your active item no longer gains charges, but battery drops become much more common"
+		],
+		"title": "Old Capacitor",
+		"id": "143",
+		"type": "trinket",
+		"subtitle": "Voltage starving",
+		"unlock": "Unlock this trinket by blowing up 10 Battery Beggars",
+		"tags": [
+
+		]
+	},
+	"144": {
+		"description": [
+			"Tears that miss enemies will redirect themselves and travel 90 degrees towards enemies",
+			"Tears must be roughly 2 tiles or closer to activate this effect"
+		],
+		"title": "Brain Worm",
+		"id": "144",
+		"type": "trinket",
+		"subtitle": "Ding!",
+		"tags": [
+
+		]
+	},
+	"145": {
+		"description": [
+			"+10 Luck while held, but the trinket is destroyed when damage is taken",
+			"Blood donation machines, Curse Rooms and Sacrifice Rooms wont destroy it",
+			"Taking a hit and activating Holy Mantle won't destroy it",
+			"Can be dropped in order to avoid breaking it",
+			"This trinket is automatically given to you after clearing 3 bosses without taking damage"
+		],
+		"title": "Perfection",
+		"id": "145",
+		"type": "trinket",
+		"subtitle": "Luck way up. Don't lose it!",
+		"tags": [
+
+		]
+	},
+	"146": {
+		"description": [
+			"Treasure Rooms are replaced with Red Treasure Rooms, which contain a deal with the devil in place of a regular item pedestal",
+			"If an item room as not yet been entered, it can be transformed to either a regular or Red Treasure Room by picking up or dropping this trinket before entering"
+		],
+		"title": "Devil's Crown",
+		"id": "146",
+		"type": "trinket",
+		"subtitle": "His special customer",
+		"unlock": "Unlock this trinket by defeating Mother as Azazel",
+		"tags": [
+			"devils crown"
+		]
+	},
+	"147": {
+		"description": [
+			"Every time you pick up a coin, you have a small chance to gain 1 bar of charge on your active item",
+			"In Antibirth this trinket was called Electric Penny"
+		],
+		"title": "Charged Penny",
+		"id": "147",
+		"type": "trinket",
+		"subtitle": "Wealth of power",
+		"unlock": "Unlock this trinket by donating to a battery beggar until he rewards 4.5 Volt",
+		"tags": [
+
+		]
+	},
+	"148": {
+		"description": [
+			"While held, your familiars will now orbit around Isaac instead of following behind him"
+		],
+		"title": "Friendship Necklace",
+		"id": "148",
+		"type": "trinket",
+		"subtitle": "Gather round",
+		"tags": [
+
+		]
+	},
+	"149": {
+		"description": [
+			"If your active item is fully charged, when you take damage it will automatically activate",
+			"It doesn't activate for free - the charges are used up as normal if this effect activates"
+		],
+		"title": "Panic Button",
+		"id": "149",
+		"type": "trinket",
+		"subtitle": "Push in case of emergency",
+		"tags": [
+
+		]
+	},
+	"150": {
+		"description": [
+			"Doors can be opened without using up a key",
+			"However, when entering the door you are taken to a blue womb room with enemies to defeat. This room will always drop a reward at the end, then allow you to exit back to the real floor"
+		],
+		"title": "Blue Key",
+		"id": "150",
+		"type": "trinket",
+		"subtitle": "Look between the rooms",
+		"unlock": "Unlock this trinket by defeating The Beast as Tainted Cain",
+		"tags": [
+
+		]
+	},
+	"151": {
+		"description": [
+			"While held this trinket causes spikes to retract into the floor",
+			"Works for curse rooms - you no longer take damage entering or leaving"
+		],
+		"title": "Flat File",
+		"id": "151",
+		"type": "trinket",
+		"subtitle": "No more spikes",
+		"tags": [
+
+		]
+	},
+	"152": {
+		"description": [
+			"+9% chance for a Planetarium to spawn",
+			"Allows Planetariums to spawn in the Womb/Utero floors",
+			"Planetarium have a base 1% chance to appear, which increases by +20% whenever you skip an Item Room (Must not enter to count as skipped)",
+			"After entering a Planetariumm the chance goes back to 1%. Holding this trinket increase that chance by +15%"
+		],
+		"title": "Telescope Lens",
+		"id": "152",
+		"type": "trinket",
+		"subtitle": "Seek the stars",
+		"unlock": "Unlock this trinket by collecting three of the following in the same run: Magic 8 Ball, Tiny Planet, Crystal Ball, Star of Bethlehem or any of the Astrology-related items (e.g. Aries, Cancer, Capricorn, Leo etc.). The item called Zodiac does not count.",
+		"tags": [
+
+		]
+	},
+	"153": {
+		"description": [
+			"Has a high chance to give you the effect of a random Mom item every room"
+		],
+		"title": "Mom's Lock",
+		"id": "153",
+		"type": "trinket",
+		"subtitle": "A piece of her love",
+		"unlock": "Unlock this trinket by defeating Isaac, ???, Satan and The Lamb as Tainted Isaac",
+		"tags": [
+			"moms lock"
+		]
+	},
+	"154": {
+		"description": [
+			"Every time you enter a brand new room, you have a chance to get a random one-time use Dice (e.g. D6, D6, D20 etc.)"
+		],
+		"title": "Dice Bag",
+		"id": "154",
+		"type": "trinket",
+		"subtitle": "Bonus roll",
+		"unlock": "Unlock this trinket by defeating Mother as Tainted Isaac",
+		"tags": [
+
+		]
+	},
+	"155": {
+		"description": [
+			"Causes Item rooms and Shops to appear in the Cathedral"
+		],
+		"title": "Holy Crown",
+		"id": "155",
+		"type": "trinket",
+		"subtitle": "Walk the path of the saint",
+		"unlock": "Unlock this trinket by defeating Isaac, ???, Satan and The Lamb as Tainted Magdalene",
+		"tags": [
+
+		]
+	},
+	"156": {
+		"description": [
+			"While held you get +1 HP Up",
+			"The first time you pick this trinket up, the heart container will be filled. This effect can't be abused - next time it will be empty if dropped"
+		],
+		"title": "Mother's Kiss",
+		"id": "156",
+		"type": "trinket",
+		"subtitle": "HP up",
+		"tags": [
+			"mothers kiss"
+		]
+	},
+	"157": {
+		"description": [
+			"Every 15 shots you will shoot an Ipecac + My Reflection shot",
+			"The tear will fly in the air for about 3 seconds and follows Isaac until it falls and explodes. You need to move out of the way or it will hurt Isaac, but can be used to open anything requiring a bomb e.g. Secret Rooms"
+		],
+		"title": "Torn Card",
+		"id": "157",
+		"type": "trinket",
+		"subtitle": "Death awaits",
+		"unlock": "Unlock this trinket by defeating Mother as Tainted Lazarus",
+		"tags": [
+
+		]
+	},
+	"158": {
+		"description": [
+			"Every time you take damage, you drop up to 2 different types of consumables on the ground",
+			"Dropped consumables can be any variant of its kind - e.g. a bomb can become a troll bomb, or a dropped coin can become a dime",
+			"Does nothing if you have no consumables"
+		],
+		"title": "Torn Pocket",
+		"id": "158",
+		"type": "trinket",
+		"subtitle": "A hole in your pocket",
+		"unlock": "Unlock this trinket by defeating Isaac, ???, Satan and The Lamb as Tainted Lazarus",
+		"tags": [
+
+		]
+	},
+	"159": {
+		"description": [
+			"All new chests become locked Golden chests"
+		],
+		"title": "Gilded Key",
+		"id": "159",
+		"type": "trinket",
+		"subtitle": "Less is more",
+		"unlock": "Unlock this trinket by defeating Isaac, ???, Satan and The Lamb as Tainted Cain",
+		"tags": [
+
+		]
+	},
+	"160": {
+		"description": [
+			"Spawns a sack at the start of each new floor"
+		],
+		"title": "Lucky Sack",
+		"id": "160",
+		"type": "trinket",
+		"subtitle": "Free goodies!",
+		"unlock": "Unlock this trinket by defeating Mother as Tainted Cain",
+		"tags": [
+
+		]
+	},
+	"161": {
+		"description": [
+			"Causes Item rooms to appear in Sheol"
+		],
+		"title": "Wicked Crown",
+		"id": "161",
+		"type": "trinket",
+		"subtitle": "Walk the path of the wicked",
+		"unlock": "Unlock this trinket by defeating Isaac, ???, Satan and The Lamb as Tainted Azazel",
+		"tags": [
+
+		]
+	},
+	"162": {
+		"description": [
+			"When entering a new room, gives a small chance to gain Azazel's short-range Brimstone laser for the current room and the ability to fly"
+		],
+		"title": "Azazel's Stump",
+		"id": "162",
+		"type": "trinket",
+		"subtitle": "Unleash your inner demon",
+		"unlock": "Unlock this trinket by defeating Mother as Tainted Azazel",
+		"tags": [
+			"azazels stump"
+		]
+	},
+	"163": {
+		"description": [
+			"Spawns 2 friendly Dips upon clearing a room",
+			"Dips that spawn after killing a Squirt turn friendly"
+		],
+		"title": "Dingle Berry",
+		"id": "163",
+		"type": "trinket",
+		"subtitle": "Oops!",
+		"unlock": "Unlock this trinket by defeating Isaac, ???, Satan and The Lamb as Tainted Blue Baby",
+		"tags": [
+
+		]
+	},
+	"164": {
+		"description": [
+			"Drops 2 bombs at once (only 1 bomb is removed from your total)"
+		],
+		"title": "Ring Cap",
+		"id": "164",
+		"type": "trinket",
+		"subtitle": "Twice the bang!",
+		"unlock": "Unlock this trinket by defeating Mother as Tainted Blue Baby",
+		"tags": [
+
+		]
+	},
+	"165": {
+		"description": [
+			"Beyond the womb floor, all pickups are replaced with a random pickup as follows:",
+			"Bomb - 26.6% chance. Heart - 26.6% chance",
+			"Pill - 16.6% chance. Card - 16.6% chance",
+			"Trinket - 6.6% chance. Battery - 6.6% chance",
+			"Essentially just removes keys from the drop table"
+		],
+		"title": "Nuh Uh!",
+		"id": "165",
+		"type": "trinket",
+		"subtitle": "Don't want!",
+		"unlock": "Unlock this trinket by defeating Isaac, ???, Satan and The Lamb as Tainted Eden",
+		"tags": [
+
+		]
+	},
+	"166": {
+		"description": [
+			"Each brand new room, this trinket has a chance to transform into a copy of a random passive item, which gives you the effect for the duration of this room"
+		],
+		"title": "Modeling Clay",
+		"id": "166",
+		"type": "trinket",
+		"subtitle": "???",
+		"unlock": "Unlock this trinket by defeating Mother as Tainted Eden",
+		"tags": [
+
+		]
+	},
+	"167": {
+		"description": [
+			"Gives a small chance to spawn a friendly Bony when clearing a room, which will throw bones at enemies until it takes enough damage to die",
+			"Can be either the regular white Bony or the black variant"
+		],
+		"title": "Polished Bone",
+		"id": "167",
+		"type": "trinket",
+		"subtitle": "Friends from beyond",
+		"unlock": "Unlock this trinket by defeating Isaac, ???, Satan and The Lamb as Tainted Forgotten",
+		"tags": [
+
+		]
+	},
+	"168": {
+		"description": [
+			"Gives you +1 Bone Heart every time you enter a new floor"
+		],
+		"title": "Hollow Heart",
+		"id": "168",
+		"type": "trinket",
+		"subtitle": "A brittle blessing",
+		"unlock": "Unlock this trinket by defeating Mother as Tainted Forgotten",
+		"tags": [
+
+		]
+	},
+	"169": {
+		"description": [
+			"Counts as 1 of 3 cat items needed towards the Guppy transformation",
+			"Dropping this trinket again removes the transformation if you dont have 3 other Guppy items"
+		],
+		"title": "Kid's Drawing",
+		"id": "169",
+		"type": "trinket",
+		"subtitle": "Looks familiar...",
+		"unlock": "Unlock this trinket by defeating Isaac, ???, Satan and The Lamb as Tainted Lost",
+		"tags": [
+			"kids drawing"
+		]
+	},
+	"170": {
+		"description": [
+			"Each time you clear a room there is a chance a Red Room will spawn at one of the walls.",
+			"The chance for a Red Room to unlock increases as you pick up more Crystal Keys.",
+			"While in a regular room, the chances to spawn a Red Room are: 1 Key = 33.33% chance. 2 keys = 50% chance. 3 or more keys = 100% chance.",
+			"While in a Red room, the chances to spawn a Red Room are: 1 Key = 12.5% chance. 2 keys = 16.6% chance. 3 keys = 25% chance. 4 keys = 50% chance. 5 keys = 100% chance.",
+			"Passive rooms with no enemies don't have a chance to spawn Red Rooms.",
+			"It's possible to hold more than one trinket by taking Mom's Purse, Belly Button or using the Smelter to convert them into passive items. Having a golden version of this trinket counts as 2 keys."
+		],
+		"title": "Crystal Key",
+		"id": "170",
+		"type": "trinket",
+		"subtitle": "Call to the other side",
+		"unlock": "Unlock this trinket by defeating Mother as Tainted Lost",
+		"tags": [
+
+		]
+	},
+	"171": {
+		"description": [
+			"Has a decent chance for Devil Deals to cost money instead of Health",
+			"The conversion rate is 1 heart container to 15 coins",
+			"Items can be on discount similar to the shop, making it 1 heart container = 7 coins instead",
+			"Can be dropped to disable this effect while in the room"
+		],
+		"title": "Keeper's Bargain",
+		"id": "171",
+		"type": "trinket",
+		"subtitle": "Money talks",
+		"unlock": "Unlock this trinket by defeating Isaac, ???, Satan and The Lamb as Tainted Keeper",
+		"tags": [
+			"keepers bargain",
+			"keeper bargain"
+		]
+	},
+	"172": {
+		"description": [
+			"While held, you will be teleported to a random room everytime you pick up a coin"
+		],
+		"title": "Cursed Penny",
+		"id": "172",
+		"type": "trinket",
+		"subtitle": "Wealth of misery",
+		"unlock": "Unlock this trinket by defeating Mother as Tainted Keeper",
+		"tags": [
+
+		]
+	},
+	"173": {
+		"description": [
+			"Allows you to pay for a devil deal with this trinket"
+		],
+		"title": "Your Soul",
+		"id": "173",
+		"type": "trinket",
+		"subtitle": "Give it to me",
+		"unlock": "Unlock this trinket by defeating Isaac, ???, Satan and The Lamb as Tainted Judas",
+		"tags": [
+
+		]
+	},
+	"174": {
+		"description": [
+			"+10% devil room chance while held"
+		],
+		"title": "Number Magnet",
+		"id": "174",
+		"type": "trinket",
+		"subtitle": "6",
+		"unlock": "Unlock this trinket by defeating Mother as Tainted Judas",
+		"tags": [
+
+		]
+	},
+	"175": {
+		"description": [
+			"Opens the door to the Blue Womb, regardless of whether you meet the 30 minute speed timer",
+			"Opening Pandora's Box while holding this item will ignore the normal effect and instead spawn 6 item pedestals from random item pools. Both the box and trinket are consumed when this happens"
+		],
+		"title": "Strange Key",
+		"id": "175",
+		"type": "trinket",
+		"subtitle": "What could it open?",
+		"unlock": "Unlock this trinket by defeating Isaac, ???, Satan and The Lamb as Tainted Eve",
+		"tags": [
+
+		]
+	},
+	"176": {
+		"description": [
+			"A small clot friend will hug Isaac, following his exact movements (similar to how Jacob & Esau work) and shooting tears when he does",
+			"The clot can be moved around by collision with an object/wall, allowing you to re-position it",
+			"The clot's damage is roughly 1/3 of your tear damage",
+			"If it takes a few hits it will die, and respawn in the next room"
+		],
+		"title": "Lil Clot",
+		"id": "176",
+		"type": "trinket",
+		"subtitle": "Mini friend",
+		"unlock": "Unlock this trinket by defeating Mother as Tainted Eve",
+		"tags": [
+			"mini clot"
+		]
+	},
+	"177": {
+		"description": [
+			"Spawns a random chest after completing a regular Challenge Room",
+			"Spawns a pedestal item after completing a boss Challenge Room"
+		],
+		"title": "Temporary Tattoo",
+		"id": "177",
+		"type": "trinket",
+		"subtitle": "You feel braver",
+		"unlock": "Unlock this trinket by defeating Isaac, ???, Satan and The Lamb as Tainted Samson",
+		"tags": [
+
+		]
+	},
+	"178": {
+		"description": [
+			"When taking damage you have a chance to explode and deal 185 damage to all enemies around you (Same damage as a Mr. Mega bomb)"
+		],
+		"title": "Swallowed M80",
+		"id": "178",
+		"type": "trinket",
+		"subtitle": "Bang!",
+		"unlock": "Unlock this trinket by defeating Mother as Tainted Samson",
+		"tags": [
+
+		]
+	},
+	"179": {
+		"description": [
+			"Familiars follow Isaac's exact movements, (similar to how Jacob & Esau work) instead of following loosely like they usually do",
+			"Holding the drop button (Ctrl on Steam version) causes them to stop moving",
+			"Doesn't affect some familiars with specific movement patterns, e.g. Abel"
+		],
+		"title": "RC Remote",
+		"id": "179",
+		"type": "trinket",
+		"subtitle": "Controllable buddies!",
+		"unlock": "Unlock this trinket by defeating Isaac, ???, Satan and The Lamb as Tainted Jacob",
+		"tags": [
+
+		]
+	},
+	"180": {
+		"description": [
+			"Gives you a familiar that follows Isaac's exact movements (similar to how Jacob & Esau work) and shoots spectral tears",
+			"Similar to Jacob and Esau, positions can be altered by running it into objects, or holding the drop button (Ctrl on Steam version)",
+			"When you place a bomb, the Found Soul will drop one too",
+			"If it takes any damage, it will die and not respawn until the next floor"
+		],
+		"title": "Found Soul",
+		"id": "180",
+		"type": "trinket",
+		"subtitle": "Finally!",
+		"unlock": "Unlock this trinket by defeating Mother as Tainted Jacob",
+		"tags": [
+
+		]
+	},
+	"181": {
+		"description": [
+			"Everytime you use your active item, you have a chance to activate another random active item"
+		],
+		"title": "Expansion Pack",
+		"id": "181",
+		"type": "trinket",
+		"subtitle": "Fun extras",
+		"unlock": "Unlock this trinket by defeating Isaac, ???, Satan and The Lamb as Tainted Bethany",
+		"tags": [
+
+		]
+	},
+	"182": {
+		"description": [
+			"Taking damage gives you a chance to spawn a flame orbital, similar to the ones created by Book of Virtues",
+			"Entering an Angel Room gives you +5 flame orbitals. The angel room spawned by The Stairway item also counts",
+			"Giving money to a beggar gives a flame orbital"
+		],
+		"title": "Beth's Essence",
+		"id": "182",
+		"type": "trinket",
+		"subtitle": "Virtue's reward",
+		"unlock": "Unlock this trinket by defeating Mother as Tainted Bethany",
+		"tags": [
+			"beths essence"
+		]
+	},
+	"183": {
+		"description": [
+			"Upon entering each new room, this trinket has a chance to copy one of your current familiars",
+			"If you have no familiars instead it will spawn either Brother Bobby or Sister Maggy",
+			"Only lasts for the current room"
+		],
+		"title": "The Twins",
+		"id": "183",
+		"type": "trinket",
+		"subtitle": "I'm seeing double...",
+		"unlock": "Unlock this trinket by defeating Isaac, ???, Satan and The Lamb as Tainted Lilith",
+		"tags": [
+
+		]
+	},
+	"184": {
+		"description": [
+			"All shops only sell familiars while holding this trinket",
+			"If you enter a shop while holding this trinket, the effect won't undo by dropping it until you move to a new floor"
+		],
+		"title": "Adoption Papers",
+		"id": "184",
+		"type": "trinket",
+		"subtitle": "Give them a home",
+		"unlock": "Unlock this trinket by defeating Mother as Tainted Lilith",
+		"tags": [
+
+		]
+	},
+	"185": {
+		"description": [
+			"Every time an enemy dies you have a chance to gain a random Locust",
+			"Different color Locusts correspond to the horsemen. Each of them deal double your tear damage, similar to how standard blue flies work",
+			"War (Red) - Explodes when touching the enemy. The actual explosion deals flat 60 damage",
+			"Pestilence (Green) - Poisons the enemy it attacks",
+			"Famine (Brown) - Applies a slowing effect",
+			"Death (Black) - Deals x4 damage instead of x2",
+			"Conquest (White) - Spawns 2-5 at once"
+		],
+		"title": "Cricket Leg",
+		"id": "185",
+		"type": "trinket",
+		"subtitle": "Infested",
+		"unlock": "Unlock this trinket by defeating Isaac, ???, Satan and The Lamb as Tainted Apollyon",
+		"tags": [
+
+		]
+	},
+	"186": {
+		"description": [
+			"Gives you a red attack fly, that will charge at enemies in the same direction you are shooting",
+			"Deals damage equal to your current tear damage",
+			"Stops charging once it hits an enemy and returns to Isaac's side"
+		],
+		"title": "Apollyon's Best Friend",
+		"id": "186",
+		"type": "trinket",
+		"subtitle": "Attack buddy",
+		"unlock": "Unlock this trinket by defeating Mother as Tainted Apollyon",
+		"tags": [
+			"apollyons best friend"
+		]
+	},
+	"187": {
+		"description": [
+			"Gives a 33% chance to spawn an extra blind pedestal item in all future item rooms. This one will be a hidden question mark",
+			"Allows you to see what both items are on alternative path floors (Downpour/Dross, Mines/Ashpit, Gehenna/Mausoleum)"
+		],
+		"title": "Broken Glasses",
+		"id": "187",
+		"type": "trinket",
+		"subtitle": "Double vision?",
+		"unlock": "Unlock this trinket by defeating challenge #40 (Seeing Double)",
+		"tags": [
+
+		]
+	},
+	"188": {
+		"description": [
+			"Gives a small chance for your tears to freeze enemies in place",
+			"Frozen enemies can be pushed into obstacles where they shatter on contact and fire ice shards around them. Any other enemies hit by these shards will become frozen too",
+			"Frozen enemies are considered dead by the game, and won't unfreeze or move again. The room doors will open if only frozen enemies remain"
+		],
+		"title": "Ice Cube",
+		"id": "188",
+		"type": "trinket",
+		"subtitle": "Stay frosty",
+		"unlock": "Unlock this trinket by defeating challenge #41 (Pica Run)",
+		"tags": [
+
+		]
+	},
+	"189": {
+		"description": [
+			"Every time you kill an enemy you get an invincibility shield for 2 seconds"
+		],
+		"title": "Sigil of Baphomet",
+		"id": "189",
+		"type": "trinket",
+		"subtitle": "Revel in death",
+		"unlock": "Unlock this trinket by defeating challenge #37 (Bloody Mary)",
+		"tags": [
+
+		]
+	}
+}
