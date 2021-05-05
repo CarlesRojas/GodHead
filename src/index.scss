@@ -190,14 +190,14 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    background-image: url("resources/background/Background.png");
+    background-image: url("resources/background/Background.svg");
     background-repeat: repeat;
-    background-size: 50%;
+    background-size: 50vw;
 
     .deleteDiv {
         position: relative;
         width: 100%;
-        height: 75%;
+        height: 100%;
     }
 }
 
@@ -215,6 +215,57 @@ body {
     width: 100%;
     height: 100%;
 
+    .grid {
+        position: absolute;
+        width: calc(100% - 10px);
+        height: calc(100% - 10px);
+        margin: 5px;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-template-rows: auto 1fr auto;
+        gap: 0px 0px;
+
+        .corner {
+            width: #{"min(calc(50vw - 5px), 200px)"};
+            height: #{"min(calc(50vw - 5px), 200px)"};
+        }
+
+        .top {
+            width: 100%;
+            height: 100%;
+            background-image: url("resources/background/Top.svg");
+            background-size: #{"min(calc(50vw - 5px), 200px)"};
+        }
+
+        .left {
+            width: 100%;
+            height: 100%;
+            background-image: url("resources/background/Left.svg");
+            background-size: #{"min(calc(50vw - 5px), 200px)"};
+        }
+
+        .middle {
+            width: 100%;
+            height: 100%;
+            background-image: url("resources/background/Middle.svg");
+            background-size: #{"min(calc(50vw - 5px), 200px)"};
+        }
+
+        .right {
+            width: 100%;
+            height: 100%;
+            background-image: url("resources/background/Right.svg");
+            background-size: #{"min(calc(50vw - 5px), 200px)"};
+        }
+
+        .bottom {
+            width: 100%;
+            height: 100%;
+            background-image: url("resources/background/Bottom.svg");
+            background-size: #{"min(calc(50vw - 5px), 200px)"};
+        }
+    }
+    /*
     .papers,
     .borders,
     .stains {
@@ -239,6 +290,7 @@ body {
             opacity: 0.5;
         }
     }
+    */
 
     .children {
         position: absolute;
