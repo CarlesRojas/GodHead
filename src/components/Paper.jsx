@@ -22,19 +22,6 @@ export default function Paper({ children }) {
 
     return (
         <div className="paper">
-            {/*
-            <div className="grid">
-                <div className="topLeft"></div>
-                <div className="top"></div>
-                <div className="topRight"></div>
-                <div className="left"></div>
-                <div className="middle"></div>
-                <div className="right"></div>
-                <div className="bottomLeft"></div>
-                <div className="bottom"></div>
-                <div className="bottomRight"></div>
-            </div>
-            */}
             <div className="grid">
                 <img src={TopLeft} alt="" className="corner" />
                 <div className="top"></div>
@@ -46,6 +33,7 @@ export default function Paper({ children }) {
                 <div className="bottom"></div>
                 <img src={BottomRight} alt="" className="corner" />
             </div>
+
             <div className="children">{children}</div>
         </div>
     );
