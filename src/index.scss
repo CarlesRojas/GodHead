@@ -14,19 +14,18 @@
     font-weight: normal;
     src: local("Upheavtt"), url("resources/fonts/upheavtt.ttf") format("truetype");
 }
+@font-face {
+    font-family: "Pixel";
+    font-weight: normal;
+    src: local("Pixel"), url("resources/fonts/Pixel.otf") format("truetype");
+}
 
 // #######################################
 //      VARIABLES
 // #######################################
 
-$background: rgb(220, 220, 220);
-$text: rgb(58, 58, 58);
-$link: rgba(0, 106, 177, 0.75);
-
-$background-dark: rgb(20, 20, 20);
-$text-dark: rgb(230, 230, 230);
-$link-dark: rgba(0, 153, 255, 0.75);
-
+$text: #3c3536;
+$subtitle: #686360;
 $font-size: 18px;
 $line-height: 22px;
 
@@ -173,13 +172,7 @@ body {
 #root {
     height: 100%;
     width: 100%;
-    background-color: $background;
     color: $text;
-
-    .dark & {
-        background-color: $background-dark;
-        color: $text-dark;
-    }
 }
 
 // #######################################
@@ -197,13 +190,13 @@ body {
     .horizontalGrid {
         position: absolute;
         top: 0;
-        left: -100vw;
+        left: -125vw;
         display: grid;
         grid-template-columns: 100vw 100vw 100vw;
         grid-template-rows: 100vh;
         height: 100vh;
-        width: 300vw;
-        gap: 0px 0px;
+        width: 350vw;
+        gap: 0 25vw;
 
         .left {
             position: relative;
@@ -231,9 +224,9 @@ body {
         display: grid;
         grid-template-columns: 100vw;
         grid-template-rows: 100vh 100vh;
-        height: 200vh;
+        height: 220vh;
         width: 100vw;
-        gap: 0px 0px;
+        gap: 20vh 0;
 
         .top {
             position: relative;
@@ -251,7 +244,7 @@ body {
 
 // ##############################################################################
 // ##############################################################################
-//      PAGES
+//      COMPONENTS
 // ##############################################################################
 // ##############################################################################
 
@@ -322,19 +315,398 @@ body {
     }
 }
 
-.delete {
+// #######################################
+//      ITEMS
+// #######################################
+
+.items {
+    position: relative;
     width: 100%;
-    color: #686360;
-    margin: 20px 0 10px;
-    font-family: "Upheavtt";
-    font-size: 2.5rem;
-    text-align: center;
+    height: 100%;
+
+    .paperContainer {
+        position: relative;
+        width: 100%;
+        height: 92%;
+
+        .list {
+            position: relative;
+            width: 100%;
+            height: 92%;
+            overflow-y: scroll;
+            margin-top: 5%;
+
+            .titleContainer {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .arrow {
+                    transition: transform 0.2s ease-in-out;
+                    height: 1.3rem;
+                    min-height: 1.3rem;
+                    max-height: 1.3rem;
+                    width: 1.3rem;
+                    min-width: 1.3rem;
+                    max-width: 1.3rem;
+                    margin: 0.5rem;
+                    transform: rotate(100deg);
+
+                    &.closed {
+                        transform: rotate(0deg);
+                    }
+                }
+
+                .title {
+                    width: min-content;
+                    font-family: "Upheavtt";
+                    font-size: 2rem;
+                    line-height: 1.5rem;
+                    text-align: center;
+                    margin: 20px 5px;
+                    color: $text;
+                }
+
+                .filler {
+                    width: 1.8rem;
+                    height: 100%;
+                }
+            }
+
+            .itemsContainer {
+                transition: height 0.2s ease-in-out;
+                width: calc(100% - 10px);
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                margin: 0 5px;
+
+                &.closed {
+                    height: 0;
+                }
+
+                .itemIcon {
+                    height: 50px;
+                    max-width: 70px;
+                    padding: 4px 6px;
+                    object-fit: contain;
+                }
+            }
+        }
+
+        .goToTop {
+            transition: opacity 0.5s ease-in-out;
+            position: absolute;
+            bottom: -0.5rem;
+            right: 0;
+            padding: 10px;
+            opacity: 1;
+
+            &.hide {
+                opacity: 0;
+            }
+
+            .icon {
+                transform: rotate(-85deg);
+                height: 1.5rem;
+                min-height: 1.5rem;
+                max-height: 1.5rem;
+                width: 1.5rem;
+                min-width: 1.5rem;
+                max-width: 1.5rem;
+            }
+        }
+    }
+
+    .scan {
+        display: flex;
+        width: 100%;
+        height: 8%;
+        opacity: 0.4;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px 12px;
+
+        .scanButton {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+
+            .icon {
+                transform: rotate(100deg);
+                height: 1.5rem;
+                min-height: 1.5rem;
+                max-height: 1.5rem;
+                width: 1.5rem;
+                min-width: 1.5rem;
+                max-width: 1.5rem;
+            }
+
+            .text {
+                width: fit-content;
+                font-family: "IsaacGame";
+                font-size: 2.5rem;
+                line-height: 2rem;
+                text-align: center;
+                color: $text;
+                font-weight: 700;
+                margin-left: 10px;
+            }
+        }
+    }
 }
 
-.deleteSubtitle {
+// #######################################
+//      ITEM
+// #######################################
+
+.item {
+    position: relative;
     width: 100%;
-    color: #686360;
-    font-family: "IsaacGame";
-    font-size: 1.5rem;
-    text-align: center;
+    height: 100%;
+
+    .paperContainer {
+        position: relative;
+        width: 100%;
+        height: 92%;
+
+        .description {
+            position: relative;
+            width: 100%;
+            height: 92%;
+            overflow-y: scroll;
+            margin-top: 5%;
+
+            .content {
+                position: relative;
+                width: 100%;
+                min-height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .itemIcon {
+                    height: 80px;
+                    max-width: 110px;
+                    padding: 4px 6px;
+                    object-fit: contain;
+                    margin: 10px 0 0;
+                }
+
+                .title {
+                    max-width: 90%;
+                    font-family: "Upheavtt";
+                    font-size: 2.2rem;
+                    line-height: 2rem;
+                    text-align: center;
+                    margin: 10px 0;
+                    color: $text;
+                }
+
+                .subtitle {
+                    max-width: 90%;
+                    font-family: "IsaacGame";
+                    font-size: 1.5rem;
+                    line-height: 2rem;
+                    text-align: center;
+                    color: $text;
+                    margin: 0 0 10px 0;
+                    font-weight: 700;
+                }
+
+                .description {
+                    max-width: 98%;
+                    font-size: 1rem;
+                    font-weight: 700;
+                    text-align: center;
+                    color: $text;
+                    margin: 0 0 15px 0;
+                    opacity: 0.7;
+
+                    &.gameFont {
+                        font-family: "IsaacGame";
+                        font-size: 1.2rem;
+                    }
+                }
+
+                .grow {
+                    flex-grow: 1;
+                }
+
+                .type {
+                    max-width: 90%;
+                    font-family: "Upheavtt";
+                    font-size: 1.5rem;
+                    text-align: center;
+                    margin: 50px 0 10px 0;
+                    color: $text;
+                }
+
+                .unlock {
+                    max-width: 98%;
+                    font-size: 1rem;
+                    font-weight: 700;
+                    text-align: center;
+                    color: $subtitle;
+                    margin: 0 0 10px 0;
+
+                    span {
+                        color: $text;
+                    }
+
+                    &.gameFont {
+                        font-family: "IsaacGame";
+                        font-size: 1.2rem;
+
+                        span {
+                            font-family: "IsaacGame";
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+
+                .rechargeTime {
+                    max-width: 98%;
+                    font-size: 1rem;
+                    font-weight: 700;
+                    text-align: center;
+                    color: $subtitle;
+                    margin: 0 0 10px 0;
+
+                    span {
+                        color: $text;
+                    }
+
+                    &.gameFont {
+                        font-family: "IsaacGame";
+                        font-size: 1.2rem;
+
+                        span {
+                            font-family: "IsaacGame";
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+
+                .pool {
+                    max-width: 98%;
+                    font-size: 1rem;
+                    font-weight: 700;
+                    text-align: center;
+                    color: $subtitle;
+                    margin: 0 0 10px 0;
+
+                    span {
+                        color: $text;
+                    }
+
+                    &.gameFont {
+                        font-family: "IsaacGame";
+                        font-size: 1.2rem;
+
+                        span {
+                            color: $text;
+                            font-family: "IsaacGame";
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .back {
+        display: flex;
+        width: 100%;
+        height: 8%;
+        opacity: 0.4;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px 12px;
+
+        .backButton {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+
+            .icon {
+                transform: scaleX(-1);
+                height: 1.5rem;
+                min-height: 1.5rem;
+                max-height: 1.5rem;
+                width: 1.5rem;
+                min-width: 1.5rem;
+                max-width: 1.5rem;
+            }
+
+            .text {
+                width: fit-content;
+                font-family: "IsaacGame";
+                font-size: 2.5rem;
+                line-height: 2rem;
+                text-align: center;
+                color: $text;
+                font-weight: 700;
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+// #######################################
+//      CAMERA
+// #######################################
+
+.camera {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .paperContainer {
+        position: relative;
+        width: 100%;
+        height: 92%;
+    }
+
+    .browse {
+        display: flex;
+        width: 100%;
+        height: 8%;
+        opacity: 0.4;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px 12px;
+
+        .browseButton {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+
+            .icon {
+                transform: rotate(-80deg);
+                height: 1.5rem;
+                min-height: 1.5rem;
+                max-height: 1.5rem;
+                width: 1.5rem;
+                min-width: 1.5rem;
+                max-width: 1.5rem;
+            }
+
+            .text {
+                width: fit-content;
+                font-family: "IsaacGame";
+                font-size: 2.5rem;
+                line-height: 2rem;
+                text-align: center;
+                color: $text;
+                font-weight: 700;
+                margin-left: 10px;
+            }
+        }
+    }
 }

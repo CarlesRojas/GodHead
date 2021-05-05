@@ -1,5 +1,10 @@
-import React, { useEffect, useState, useRef } from "react";
-import { useSpring, animated } from "react-spring";
+import React, { useEffect, useContext } from "react";
+import { animated } from "react-spring";
+import { useDrag } from "react-use-gesture";
+
+// Contexts
+import { Utils } from "contexts/Utils";
+import { Data } from "contexts/Data";
 
 // Components
 import Items from "components/Items";
@@ -8,61 +13,77 @@ import Options from "components/Options";
 import Item from "components/Item";
 
 export default function App() {
+    // Contexts
+    const { getCookie, setCookie } = useContext(Utils);
+    const { setSeparateByDLC, setGameFont, currHorizontalPos, currVerticalPos, pagePositions, setPagePositions, showLeft, showMiddle, showRight, showTop, showBottom } = useContext(Data);
+
     // #################################################
-    //   PAGE NAVIGATION
+    //   BACK GESTURE
     // #################################################
 
-    // Current horizontal position: "left" "middle" "right"
-    const currHorizontalPos = useRef("middle");
-    const [, setCurrHorizontalPos] = useState("middle");
+    // Horizontal gesture
+    const gestureBind = useDrag(
+        ({ event, cancel, canceled, down, vxvy: [vx], movement: [mx] }) => {
+            // Stop event propagation
+            event.stopPropagation();
 
-    // Current vertical position: "top" "bottom"
-    const currVerticalPos = useRef("top");
-    const [, setCurrVerticalPos] = useState("top");
+            // Return if canceled
+            if (canceled) return;
 
-    // Page position spring
-    const [pagePositions, setPositions] = useSpring(() => ({
-        x: 0,
-        y: 0,
-    }));
+            // Cancel gesture
+            if (currHorizontalPos.current === "middle") {
+                cancel();
+                return;
+            }
 
-    // Show the left screen
-    const showLeft = () => {
-        setPositions({ x: window.innerWidth });
-        currHorizontalPos.current = "left";
-        setCurrHorizontalPos("left");
-    };
+            // Snap to the welcome screen or stay on te current page
+            if (!down) {
+                if (currHorizontalPos.current === "right" && (mx > 100 || vx > 1)) showMiddle();
+                else if (currHorizontalPos.current === "left" && (mx < -100 || vx < -1)) showMiddle();
+                else if (currHorizontalPos.current === "right") showRight();
+                else showLeft();
+            }
 
-    // Show the middle screen
-    const showMiddle = () => {
-        setPositions({ x: 0 });
-        currHorizontalPos.current = "middle";
-        setCurrHorizontalPos("middle");
-    };
+            // Update the position while the gesture is active
+            else {
+                var displ = currHorizontalPos.current === "right" ? Math.max(mx, -10) : Math.min(mx, 10);
+                setPagePositions({ x: (currHorizontalPos.current === "right" ? -window.innerWidth : window.innerWidth) * 1.25 + displ });
+            }
+        },
+        { filterTaps: true, axis: "x" }
+    );
 
-    // Show the right screen
-    const showRight = () => {
-        setPositions({ x: -window.innerWidth });
-        currHorizontalPos.current = "right";
-        setCurrHorizontalPos("right");
-    };
+    // #################################################
+    //   GET OPTIONS
+    // #################################################
 
-    // Show the top screen
-    const showTop = () => {
-        if (currHorizontalPos.current !== "middle") return;
+    // Get options
+    const getOptions = () => {
+        const separateByDLCCookie = getCookie("godhead_separateByDLC");
 
-        setPositions({ y: 0 });
-        currVerticalPos.current = "top";
-        setCurrVerticalPos("top");
-    };
+        // If the option exists, save in data & renew cookie
+        if (separateByDLCCookie) {
+            setSeparateByDLC(separateByDLCCookie === "true");
+            setCookie("godhead_separateByDLC", separateByDLCCookie, 365);
+        }
+        // Otherwise create cookie -> false
+        else {
+            setSeparateByDLC(false);
+            setCookie("godhead_separateByDLC", "false", 365);
+        }
 
-    // Show the bottom screen
-    const showBottom = () => {
-        if (currHorizontalPos.current !== "middle") return;
+        const gameFontCookie = getCookie("godhead_gameFont");
 
-        setPositions({ y: -window.innerHeight });
-        currVerticalPos.current = "bottom";
-        setCurrVerticalPos("bottom");
+        // If the option exists, save in data & renew cookie
+        if (gameFontCookie) {
+            setGameFont(gameFontCookie === "true");
+            setCookie("godhead_gameFont", gameFontCookie, 365);
+        }
+        // Otherwise create cookie -> false
+        else {
+            setGameFont(false);
+            setCookie("godhead_gameFont", "true", 365);
+        }
     };
 
     // #################################################
@@ -83,6 +104,9 @@ export default function App() {
         // Subscribe to events
         window.addEventListener("keydown", onKeyPressed, true);
 
+        // Get Options
+        getOptions();
+
         // Unsubscribe from events and stop loop
         return () => {
             window.removeEventListener("keydown", onKeyPressed, true);
@@ -96,7 +120,7 @@ export default function App() {
     // #################################################
 
     return (
-        <div className="app" onKeyDown={onKeyPressed}>
+        <div className="app" onKeyDown={onKeyPressed} {...gestureBind()}>
             <animated.div className="horizontalGrid" style={{ x: pagePositions.x }}>
                 <div className="left">
                     <Options></Options>
