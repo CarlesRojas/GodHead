@@ -28,6 +28,7 @@ const DataProvider = (props) => {
         setPagePositions({ x: window.innerWidth * 1.25 });
         currHorizontalPos.current = "left";
         setCurrHorizontalPos("left");
+        setCameraActive(false);
     };
 
     // Show the middle screen
@@ -35,6 +36,10 @@ const DataProvider = (props) => {
         setPagePositions({ x: 0 });
         currHorizontalPos.current = "middle";
         setCurrHorizontalPos("middle");
+
+        // If in the bottom, show camera
+        if ((currVerticalPos.current = "bottom")) setCameraActive(true);
+        else setCameraActive(false);
     };
 
     // Show the right screen
@@ -42,6 +47,7 @@ const DataProvider = (props) => {
         setPagePositions({ x: -window.innerWidth * 1.25 });
         currHorizontalPos.current = "right";
         setCurrHorizontalPos("right");
+        setCameraActive(false);
     };
 
     // Show the top screen
@@ -51,6 +57,7 @@ const DataProvider = (props) => {
         setPagePositions({ y: 0 });
         currVerticalPos.current = "top";
         setCurrVerticalPos("top");
+        setCameraActive(false);
     };
 
     // Show the bottom screen
@@ -60,6 +67,7 @@ const DataProvider = (props) => {
         setPagePositions({ y: -window.innerHeight * 1.2 });
         currVerticalPos.current = "bottom";
         setCurrVerticalPos("bottom");
+        setCameraActive(true);
     };
 
     // #################################################
@@ -73,7 +81,14 @@ const DataProvider = (props) => {
     //   CURRENT ITEM
     // #################################################
 
+    const [selectedItem, setSelectedItem] = useState("331");
     const [currentItem, setCurrentItem] = useState("331");
+
+    // #################################################
+    //   CAMERA
+    // #################################################
+
+    const [cameraActive, setCameraActive] = useState(false);
 
     return (
         <Data.Provider
@@ -98,6 +113,12 @@ const DataProvider = (props) => {
                 // CURRENT ITEM
                 currentItem,
                 setCurrentItem,
+                selectedItem,
+                setSelectedItem,
+
+                // CAMERA
+                cameraActive,
+                setCameraActive,
             }}
         >
             {props.children}

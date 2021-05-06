@@ -1,4 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef } from "react";
+import { isMobile } from "react-device-detect";
+import classnames from "classnames";
 
 // Contexts
 import { Data } from "contexts/Data";
@@ -13,12 +15,24 @@ import trinketsJSON from "resources/info/trinkets.json";
 import cardsJSON from "resources/info/cards.json";
 
 // Icons
-import ArrowIcon from "resources/icons/Arrow.png";
+import ArrowIcon from "resources/icons/Arrow.svg";
 
 export default function Item() {
     // Contexts
     const { currentItem, gameFont, showMiddle } = useContext(Data);
     const { ITEMS, TRINKETS, CARDS } = useContext(Icons);
+
+    // Description ref
+    const descriptionRef = useRef(null);
+
+    // #################################################
+    //   COMPONENT MOUNT
+    // #################################################
+
+    // On componente mount
+    useEffect(() => {
+        if (descriptionRef.current) descriptionRef.current.scrollTo({ top: 0 });
+    }, [currentItem]);
 
     // #################################################
     //   RENDER
@@ -48,7 +62,7 @@ export default function Item() {
     // Unlock
     if ("unlock" in info)
         var unlock = (
-            <p className={"unlock" + (gameFont ? " gameFont" : "")}>
+            <p className={classnames("unlock", { gameFont: gameFont }, { desktop: !isMobile })}>
                 <span>Unlock:</span> {info.unlock}
             </p>
         );
@@ -57,7 +71,7 @@ export default function Item() {
     // recharge Time
     if ("rechargeTime" in info)
         var rechargeTime = (
-            <p className={"rechargeTime" + (gameFont ? " gameFont" : "")}>
+            <p className={classnames("rechargeTime", { gameFont: gameFont }, { desktop: !isMobile })}>
                 <span>Recharge Time:</span> {info.rechargeTime}
             </p>
         );
@@ -66,7 +80,7 @@ export default function Item() {
     // Item Pool
     if ("pool" in info)
         var pool = (
-            <p className={"pool" + (gameFont ? " gameFont" : "")}>
+            <p className={classnames("pool", { gameFont: gameFont }, { desktop: !isMobile })}>
                 <span>Item Pool:</span> {info.pool.join(", ")}
             </p>
         );
@@ -74,22 +88,22 @@ export default function Item() {
 
     return (
         <div className="item">
-            <div className="paperContainer">
+            <div className={classnames("paperContainer", { desktop: !isMobile })}>
                 <Paper>
-                    <div className="description">
+                    <div className="description" ref={descriptionRef}>
                         <div className="content">
                             <img src={icon} alt="" className="itemIcon" />
-                            <p className="title">{info.title}</p>
-                            <p className="subtitle">"{info.subtitle}"</p>
+                            <p className={classnames("title", { desktop: !isMobile })}>{info.title}</p>
+                            <p className={classnames("subtitle", { desktop: !isMobile })}>"{info.subtitle}"</p>
                             {info.description.map((sentence, i) => {
                                 return (
-                                    <p className={"description" + (gameFont ? " gameFont" : "")} key={i}>
+                                    <p className={classnames("description", { gameFont: gameFont }, { desktop: !isMobile })} key={i}>
                                         {sentence}
                                     </p>
                                 );
                             })}
                             <div className="grow"></div>
-                            <p className="type">{type}</p>
+                            <p className={classnames("type", { desktop: !isMobile })}>{type}</p>
                             {unlock}
                             {rechargeTime}
                             {pool}

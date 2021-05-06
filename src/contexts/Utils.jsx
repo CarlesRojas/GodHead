@@ -346,6 +346,32 @@ const UtilsProvider = (props) => {
         });
     };
 
+    // Crop Image
+    const cropImage = (image, top, left, width, height) => {
+        return new Promise((resolve) => {
+            // Create new image
+            const inputImage = new Image();
+
+            // Crop
+            inputImage.onload = () => {
+                var canvas = document.createElement("canvas");
+                canvas.width = width;
+                canvas.height = height;
+                var ctx = canvas.getContext("2d");
+                ctx.drawImage(inputImage, -left, -top);
+
+                // Encode image to data-uri with base64
+                const imageBase64 = canvas.toDataURL();
+
+                // Resolve
+                resolve(imageBase64);
+            };
+
+            // Load Image
+            inputImage.src = image;
+        });
+    };
+
     return (
         <Utils.Provider
             value={{
@@ -387,6 +413,7 @@ const UtilsProvider = (props) => {
 
                 // IMAGE
                 cropAndResizeImage,
+                cropImage,
             }}
         >
             {props.children}

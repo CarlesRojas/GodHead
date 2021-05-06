@@ -1,4 +1,5 @@
 import React, { useContext, useRef, useState } from "react";
+import { isMobile } from "react-device-detect";
 import classnames from "classnames";
 
 // Contexts
@@ -14,11 +15,11 @@ import coloredCardsJSON from "resources/info/coloredCards.json";
 import expansionJSON from "resources/info/expansion.json";
 
 // Icons
-import ArrowIcon from "resources/icons/Arrow.png";
+import ArrowIcon from "resources/icons/Arrow.svg";
 
 export default function Items() {
     // Contexts
-    const { separateByDLC, showRight, showBottom, setCurrentItem } = useContext(Data);
+    const { separateByDLC, showRight, showBottom, setCurrentItem, selectedItem, setSelectedItem } = useContext(Data);
     const { ITEMS, TRINKETS, CARDS } = useContext(Icons);
 
     // #################################################
@@ -58,8 +59,22 @@ export default function Items() {
 
     // On item clicked
     const onItemClicked = (id) => {
+        setSelectedItem(id);
         setCurrentItem(id);
         showRight();
+    };
+
+    // On item hover in
+    const onItemHoverIn = (id) => {
+        if (isMobile) return;
+
+        setCurrentItem(id);
+    };
+    // On item hover out
+    const onItemHoverOut = (id) => {
+        if (isMobile) return;
+
+        setCurrentItem(selectedItem);
     };
 
     const listRef = useRef(null);
@@ -83,22 +98,55 @@ export default function Items() {
     // Separate by dlc
     if (separateByDLC) {
         var content = (
-            <div className="list" ref={listRef} onScroll={onListScroll}>
+            <div className={classnames("list", { desktop: !isMobile })} ref={listRef} onScroll={onListScroll}>
                 {dlcOrder.current.map((name, i) => {
                     const order = expansionJSON[name];
                     return (
                         <React.Fragment key={i}>
-                            <div className="titleContainer" onClick={() => openCloseSection(name)}>
+                            <div className={classnames("titleContainer", { desktop: !isMobile })} onClick={() => openCloseSection(name)}>
                                 <img id={`${name}_arrow`} src={ArrowIcon} alt="" className="arrow" />
-                                <p className="title">{name}</p>
+                                <p className={classnames("title", { desktop: !isMobile })}>{name}</p>
                                 <div className="filler"></div>
                             </div>
 
                             <div id={name} className="itemsContainer">
                                 {order.map((id, j) => {
-                                    if (id.includes("c")) return <img src={CARDS[id]} alt="" className="itemIcon" key={j} onClick={() => onItemClicked(id)} />;
-                                    else if (id.includes("t")) return <img src={TRINKETS[id]} alt="" className="itemIcon" key={j} onClick={() => onItemClicked(id)} />;
-                                    else return <img src={ITEMS[id]} alt="" className="itemIcon" key={j} onClick={() => onItemClicked(id)} />;
+                                    if (id.includes("c"))
+                                        return (
+                                            <img
+                                                src={CARDS[id]}
+                                                alt=""
+                                                className={classnames("itemIcon", { desktop: !isMobile }, { clicked: id === selectedItem })}
+                                                key={j}
+                                                onClick={() => onItemClicked(id)}
+                                                onMouseEnter={() => onItemHoverIn(id)}
+                                                onMouseLeave={() => onItemHoverOut(id)}
+                                            />
+                                        );
+                                    else if (id.includes("t"))
+                                        return (
+                                            <img
+                                                src={TRINKETS[id]}
+                                                alt=""
+                                                className={classnames("itemIcon", { desktop: !isMobile }, { clicked: id === selectedItem })}
+                                                key={j}
+                                                onClick={() => onItemClicked(id)}
+                                                onMouseEnter={() => onItemHoverIn(id)}
+                                                onMouseLeave={() => onItemHoverOut(id)}
+                                            />
+                                        );
+                                    else
+                                        return (
+                                            <img
+                                                src={ITEMS[id]}
+                                                alt=""
+                                                className={classnames("itemIcon", { desktop: !isMobile }, { clicked: id === selectedItem })}
+                                                key={j}
+                                                onClick={() => onItemClicked(id)}
+                                                onMouseEnter={() => onItemHoverIn(id)}
+                                                onMouseLeave={() => onItemHoverOut(id)}
+                                            />
+                                        );
                                 })}
                             </div>
                         </React.Fragment>
@@ -111,60 +159,97 @@ export default function Items() {
     // Separate only by type
     else {
         content = (
-            <div className="list" ref={listRef} onScroll={onListScroll}>
-                <div className="titleContainer" onClick={() => openCloseSection("items")}>
+            <div className={classnames("list", { desktop: !isMobile })} ref={listRef} onScroll={onListScroll}>
+                <div className={classnames("titleContainer", { desktop: !isMobile })} onClick={() => openCloseSection("items")}>
                     <img id={"items_arrow"} src={ArrowIcon} alt="" className="arrow" />
-                    <p className="title">Items</p>
+                    <p className={classnames("title", { desktop: !isMobile })}>Items</p>
                     <div className="filler"></div>
                 </div>
                 <div id={"items"} className="itemsContainer">
                     {coloredItemsJSON.map((id, j) => {
-                        return <img src={ITEMS[id]} alt="" className="itemIcon" key={j} onClick={() => onItemClicked(id)} />;
+                        return (
+                            <img
+                                src={ITEMS[id]}
+                                alt=""
+                                className={classnames("itemIcon", { desktop: !isMobile }, { clicked: id === selectedItem })}
+                                key={j}
+                                onClick={() => onItemClicked(id)}
+                                onMouseEnter={() => onItemHoverIn(id)}
+                                onMouseLeave={() => onItemHoverOut(id)}
+                            />
+                        );
                     })}
                 </div>
 
-                <div className="titleContainer" onClick={() => openCloseSection("trinkets")}>
+                <div className={classnames("titleContainer", { desktop: !isMobile })} onClick={() => openCloseSection("trinkets")}>
                     <img id={"trinkets_arrow"} src={ArrowIcon} alt="" className="arrow" />
-                    <p className="title">Trinkets</p>
+                    <p className={classnames("title", { desktop: !isMobile })}>Trinkets</p>
                     <div className="filler"></div>
                 </div>
                 <div id={"trinkets"} className="itemsContainer">
                     {coloredTrinketsJSON.map((id, j) => {
-                        return <img src={TRINKETS[id]} alt="" className="itemIcon" key={j} onClick={() => onItemClicked(id)} />;
+                        return (
+                            <img
+                                src={TRINKETS[id]}
+                                alt=""
+                                className={classnames("itemIcon", { desktop: !isMobile }, { clicked: id === selectedItem })}
+                                key={j}
+                                onClick={() => onItemClicked(id)}
+                                onMouseEnter={() => onItemHoverIn(id)}
+                                onMouseLeave={() => onItemHoverOut(id)}
+                            />
+                        );
                     })}
                 </div>
 
-                <div className="titleContainer" onClick={() => openCloseSection("cards")}>
+                <div className={classnames("titleContainer", { desktop: !isMobile })} onClick={() => openCloseSection("cards")}>
                     <img id={"cards_arrow"} src={ArrowIcon} alt="" className="arrow" />
-                    <p className="title">Cards</p>
+                    <p className={classnames("title", { desktop: !isMobile })}>Consumables</p>
                     <div className="filler"></div>
                 </div>
                 <div id={"cards"} className="itemsContainer">
                     {coloredCardsJSON.map((id, j) => {
-                        return <img src={CARDS[id]} alt="" className="itemIcon" key={j} onClick={() => onItemClicked(id)} />;
+                        return (
+                            <img
+                                src={CARDS[id]}
+                                alt=""
+                                className={classnames("itemIcon", { desktop: !isMobile }, { clicked: id === selectedItem })}
+                                key={j}
+                                onClick={() => onItemClicked(id)}
+                                onMouseEnter={() => onItemHoverIn(id)}
+                                onMouseLeave={() => onItemHoverOut(id)}
+                            />
+                        );
                     })}
                 </div>
             </div>
         );
     }
 
-    return (
-        <div className="items">
-            <div className="paperContainer">
-                <Paper>
-                    {content}
-                    <div className={classnames("goToTop", { hide: isOnTop })} onClick={goToTop}>
-                        <img src={ArrowIcon} alt="" className="icon" />
-                    </div>
-                </Paper>
-            </div>
-
+    // Scan button
+    if (isMobile)
+        var scanButton = (
             <div className="scan">
                 <div className="scanButton" onClick={showBottom}>
                     <img src={ArrowIcon} alt="" className="icon" />
                     <p className="text">scan</p>
                 </div>
             </div>
+        );
+    else scanButton = null;
+
+    return (
+        <div className="items">
+            <div className={classnames("paperContainer", { desktop: !isMobile })}>
+                <Paper>
+                    {content}
+                    <div className={classnames("goToTop", { hide: isOnTop }, { desktop: !isMobile })} onClick={goToTop}>
+                        <img src={ArrowIcon} alt="" className={classnames("icon", { desktop: !isMobile })} />
+                    </div>
+                </Paper>
+            </div>
+
+            {scanButton}
         </div>
     );
 }

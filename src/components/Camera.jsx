@@ -1,22 +1,153 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import Webcam from "react-webcam";
+import SVG from "react-inlinesvg";
+import compareImages from "resemblejs/compareImages";
 
 // Components
 import Paper from "components/Paper";
 
 // Contexts
 import { Data } from "contexts/Data";
+import { Utils } from "contexts/Utils";
+import { Icons } from "contexts/Icons";
 
 // Icons
-import ArrowIcon from "resources/icons/Arrow.png";
+import ArrowIcon from "resources/icons/Arrow.svg";
+import CameraIcon from "resources/icons/Cam.svg";
+import LoadingIcon from "resources/icons/Loading.svg";
 
 export default function Camera() {
     // Contexts
-    const { showTop } = useContext(Data);
+    const { showTop, cameraActive } = useContext(Data);
+    const { cropImage } = useContext(Utils);
+    const { ITEMS, TRINKETS, CARDS } = useContext(Icons);
+
+    // #################################################
+    //   WEBCAM
+    // #################################################
+
+    // Webcam reference
+    const cameraRef = React.useRef(null);
+
+    // Image
+    const [image, setImage] = useState(null);
+    const [croppedImage, setCroppedImage] = useState(null);
+
+    // Capture a screenshot and save it in the register form state
+    const capturePhoto = async () => {
+        const imageSrc = cameraRef.current.getScreenshot({ width: 400, height: 400 });
+        setImage(imageSrc);
+
+        var croppedImg = await cropImage(imageSrc, 90, 90, 220, 220);
+        //setCroppedImage(croppedImg);
+
+        getMoreSimilar(croppedImg);
+    };
+
+    // Go back to retaking the screenshot
+    const retakePhoto = () => {
+        setImage(null);
+    };
+
+    // #################################################
+    //   MATCH
+    // #################################################
+
+    const [similarItems, setSimilarItems] = useState([]);
+
+    // Check all items for the best matched
+    const getMoreSimilar = async (croppedImg) => {
+        // New array
+        var ids = [];
+        var match = [];
+
+        console.log(typeof ITEMS);
+        console.log(Object.keys(ITEMS));
+
+        for (const id of Object.keys(ITEMS)) {
+            const data = await compareImages(croppedImg, ITEMS[id], {
+                scaleToSameSize: true,
+                ignore: "antialiasing",
+            });
+
+            // Add to array if it is the first
+            if (match.length <= 0) {
+                console.log("First");
+                ids.push(id);
+                match.push(data.rawMisMatchPercentage);
+            }
+
+            // Otherwise
+            else {
+                var targetPos = -1;
+
+                for (let i = match.length - 1; i >= 0; i--) {
+                    const currMatch = match[i];
+
+                    if (data.rawMisMatchPercentage < currMatch) targetPos = i;
+                    else break;
+                }
+                console.log(targetPos);
+
+                // Add to array
+                if (targetPos >= 0) {
+                    ids.splice(targetPos, 0, id);
+                    match.splice(targetPos, 0, data.rawMisMatchPercentage);
+
+                    // If array has more than 10 items, remove one
+                    if (match.length > 10) {
+                        console.log("Delete");
+                        ids.pop();
+                        match.pop();
+                    }
+                }
+            }
+        }
+
+        setSimilarItems(ids);
+    };
+
+    // #################################################
+    //   RENDER
+    // #################################################
+
+    var croppedImageDel = croppedImage ? <img src={croppedImage} alt="" className="cropped" /> : null;
+
+    // Placeholder camera
+    var webcam = cameraActive ? (
+        <Webcam className="webcam" audio={false} videoConstraints={{ facingMode: "environment", aspectRatio: 1 }} mirrored={false} ref={cameraRef} screenshotFormat="image/png" />
+    ) : null;
+
+    var content = image ? (
+        <div className="content">
+            <img src={image} alt="" className="screenshot" />
+            <div className="camBorder"></div>
+            <div className="filler"></div>
+            {/* {croppedImageDel} */}
+            <div className="possibleItems">{similarItems.join()}</div>
+            <div className="retake">
+                <div className="retakeButton" onClick={retakePhoto}>
+                    retake
+                </div>
+            </div>
+        </div>
+    ) : (
+        <div className="content">
+            <img src={LoadingIcon} alt="" className="loadingIcon" />
+            {webcam}
+            <div className="camBorder withFrame"></div>
+            <div className="hint">frame the item within the markers</div>
+            <div className="filler"></div>
+            <div className="camButton">
+                <img src={CameraIcon} alt="" className="camIcon" onClick={capturePhoto} />
+            </div>
+        </div>
+    );
 
     return (
         <div className="camera">
             <div className="paperContainer">
-                <Paper></Paper>
+                <Paper>{content}</Paper>
             </div>
 
             <div className="browse">

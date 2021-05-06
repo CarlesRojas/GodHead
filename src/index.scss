@@ -169,6 +169,11 @@ body {
     @include touch-action(none);
 }
 
+img,
+video {
+    display: block;
+}
+
 #root {
     height: 100%;
     width: 100%;
@@ -189,28 +194,16 @@ body {
 
     .horizontalGrid {
         position: absolute;
-        top: 0;
-        left: -125vw;
         display: grid;
         grid-template-columns: 100vw 100vw 100vw;
         grid-template-rows: 100vh;
         height: 100vh;
         width: 350vw;
+        top: 0;
+        left: -125vw;
         gap: 0 25vw;
 
-        .left {
-            position: relative;
-            height: 100%;
-            width: 100%;
-        }
-
-        .middle {
-            position: relative;
-            height: 100%;
-            width: 100%;
-        }
-
-        .right {
+        .cell {
             position: relative;
             height: 100%;
             width: 100%;
@@ -219,23 +212,49 @@ body {
 
     .verticalGrid {
         position: absolute;
-        top: 0;
-        left: 0;
         display: grid;
         grid-template-columns: 100vw;
         grid-template-rows: 100vh 100vh;
         height: 220vh;
         width: 100vw;
+        top: 0;
+        left: 0;
         gap: 20vh 0;
 
-        .top {
+        .cell {
             position: relative;
             height: 100%;
             width: 100%;
         }
+    }
 
-        .bottom {
+    .desktopGrid {
+        display: grid;
+        grid-template-areas:
+            "items items item"
+            "items items item"
+            "items items options";
+        height: 100vh;
+        width: 100vw;
+        gap: 50px;
+
+        .itemsCell {
             position: relative;
+            grid-area: items;
+            height: 100%;
+            width: 100%;
+        }
+
+        .itemCell {
+            position: relative;
+            grid-area: item;
+            height: 100%;
+            width: 100%;
+        }
+
+        .optionsCell {
+            position: relative;
+            grid-area: options;
             height: 100%;
             width: 100%;
         }
@@ -309,9 +328,16 @@ body {
 
     .children {
         position: absolute;
-        height: calc(100% - 14vw);
-        width: calc(100% - 14vw);
-        margin: 7vw;
+        height: calc(100% - 40px);
+        width: calc(100% - 40px);
+        overflow: visible;
+        margin: 20px;
+
+        &.desktop {
+            height: calc(100% - 100px);
+            width: calc(100% - 100px);
+            margin: 50px 50px 50px 50px;
+        }
     }
 }
 
@@ -321,37 +347,68 @@ body {
 
 .items {
     position: relative;
-    width: 100%;
     height: 100%;
+    width: 100%;
 
     .paperContainer {
         position: relative;
-        width: 100%;
         height: 92%;
+        width: 100%;
+
+        &.desktop {
+            height: 100%;
+        }
 
         .list {
             position: relative;
+            height: 90%;
             width: 100%;
-            height: 92%;
-            overflow-y: scroll;
-            margin-top: 5%;
+            overflow-y: auto;
+            margin-top: 20px;
+
+            &.desktop {
+                height: calc(100% - 3rem);
+                margin-top: 0;
+            }
 
             .titleContainer {
-                width: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                width: 100%;
+
+                &.desktop {
+                    .arrow {
+                        height: 2rem;
+                        max-height: 2rem;
+                        min-height: 2rem;
+                        width: 2rem;
+                        max-width: 2rem;
+                        min-width: 2rem;
+                        margin: 0.5rem;
+                    }
+
+                    .title {
+                        margin: 50px 10px;
+                        font-size: 3rem;
+                        line-height: 2.5rem;
+                    }
+
+                    .filler {
+                        width: 2.5rem;
+                    }
+                }
 
                 .arrow {
                     transition: transform 0.2s ease-in-out;
-                    height: 1.3rem;
-                    min-height: 1.3rem;
-                    max-height: 1.3rem;
-                    width: 1.3rem;
-                    min-width: 1.3rem;
-                    max-width: 1.3rem;
-                    margin: 0.5rem;
                     transform: rotate(100deg);
+                    height: 1.3rem;
+                    max-height: 1.3rem;
+                    min-height: 1.3rem;
+                    width: 1.3rem;
+                    max-width: 1.3rem;
+                    min-width: 1.3rem;
+                    margin: 0.5rem;
 
                     &.closed {
                         transform: rotate(0deg);
@@ -360,27 +417,31 @@ body {
 
                 .title {
                     width: min-content;
+                    color: $text;
+                    margin: 20px 5px;
                     font-family: "Upheavtt";
                     font-size: 2rem;
-                    line-height: 1.5rem;
                     text-align: center;
-                    margin: 20px 5px;
-                    color: $text;
+                    line-height: 1.5rem;
+
+                    &.desktop {
+                        width: unset;
+                    }
                 }
 
                 .filler {
-                    width: 1.8rem;
                     height: 100%;
+                    width: 1.8rem;
                 }
             }
 
             .itemsContainer {
-                transition: height 0.2s ease-in-out;
-                width: calc(100% - 10px);
                 display: flex;
                 flex-wrap: wrap;
-                justify-content: center;
                 align-items: center;
+                justify-content: center;
+                transition: height 0.2s ease-in-out;
+                width: calc(100% - 10px);
                 margin: 0 5px;
 
                 &.closed {
@@ -390,43 +451,93 @@ body {
                 .itemIcon {
                     height: 50px;
                     max-width: 70px;
-                    padding: 4px 6px;
                     object-fit: contain;
+                    padding: 4px 6px;
+
+                    &.desktop {
+                        transition: transform 0.2s ease-in-out;
+                        transform: scale(1);
+                        height: 70px;
+                        max-width: 90px;
+                        padding: 6px 8px;
+
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+
+                        &.clicked {
+                            transform: scale(1.2);
+                        }
+                    }
                 }
             }
         }
 
         .goToTop {
-            transition: opacity 0.5s ease-in-out;
             position: absolute;
-            bottom: -0.5rem;
+            transition: opacity 0.5s ease-in-out, transform 0.2s ease-in-out;
+            transform: scale(1);
             right: 0;
-            padding: 10px;
+            bottom: 3px;
             opacity: 1;
+            padding: 10px 20px;
 
             &.hide {
                 opacity: 0;
             }
 
+            &.desktop {
+                right: -1rem;
+                bottom: -1rem;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+
             .icon {
                 transform: rotate(-85deg);
                 height: 1.5rem;
-                min-height: 1.5rem;
                 max-height: 1.5rem;
+                min-height: 1.5rem;
                 width: 1.5rem;
-                min-width: 1.5rem;
                 max-width: 1.5rem;
+                min-width: 1.5rem;
+
+                &.desktop {
+                    height: 2.5rem;
+                    max-height: 2.5rem;
+                    min-height: 2.5rem;
+                    width: 2.5rem;
+                    max-width: 2.5rem;
+                    min-width: 2.5rem;
+                }
+            }
+        }
+
+        .selected {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            opacity: 0.4;
+
+            .icon {
+                height: 60px;
+                max-height: 60px;
+                min-height: 60px;
+                width: 60px;
+                max-width: 60px;
+                min-width: 60px;
             }
         }
     }
 
     .scan {
         display: flex;
-        width: 100%;
-        height: 8%;
-        opacity: 0.4;
         align-items: center;
         justify-content: center;
+        height: 8%;
+        width: 100%;
+        opacity: 0.4;
         padding: 0 20px 12px;
 
         .scanButton {
@@ -438,22 +549,22 @@ body {
             .icon {
                 transform: rotate(100deg);
                 height: 1.5rem;
-                min-height: 1.5rem;
                 max-height: 1.5rem;
+                min-height: 1.5rem;
                 width: 1.5rem;
-                min-width: 1.5rem;
                 max-width: 1.5rem;
+                min-width: 1.5rem;
             }
 
             .text {
                 width: fit-content;
+                color: $text;
+                margin-left: 10px;
                 font-family: "IsaacGame";
                 font-size: 2.5rem;
-                line-height: 2rem;
-                text-align: center;
-                color: $text;
                 font-weight: 700;
-                margin-left: 10px;
+                text-align: center;
+                line-height: 2rem;
             }
         }
     }
@@ -465,70 +576,93 @@ body {
 
 .item {
     position: relative;
-    width: 100%;
     height: 100%;
+    width: 100%;
 
     .paperContainer {
         position: relative;
-        width: 100%;
         height: 92%;
+        width: 100%;
+
+        &.desktop {
+            height: 100%;
+        }
 
         .description {
             position: relative;
-            width: 100%;
             height: 92%;
-            overflow-y: scroll;
+            width: 100%;
+            overflow-y: auto;
             margin-top: 5%;
 
             .content {
+                pointer-events: none;
                 position: relative;
-                width: 100%;
-                min-height: 100%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                min-height: 100%;
+                width: 100%;
 
                 .itemIcon {
                     height: 80px;
                     max-width: 110px;
-                    padding: 4px 6px;
                     object-fit: contain;
                     margin: 10px 0 0;
+                    padding: 4px 6px;
                 }
 
                 .title {
                     max-width: 90%;
+                    color: $text;
+                    margin: 10px 0;
                     font-family: "Upheavtt";
                     font-size: 2.2rem;
-                    line-height: 2rem;
                     text-align: center;
-                    margin: 10px 0;
-                    color: $text;
+                    line-height: 2rem;
+
+                    &.desktop {
+                        font-size: 2.5rem;
+                        line-height: 2.2rem;
+                    }
                 }
 
                 .subtitle {
                     max-width: 90%;
-                    font-family: "IsaacGame";
-                    font-size: 1.5rem;
-                    line-height: 2rem;
-                    text-align: center;
                     color: $text;
                     margin: 0 0 10px 0;
+                    font-family: "IsaacGame";
+                    font-size: 1.5rem;
                     font-weight: 700;
+                    text-align: center;
+                    line-height: 2rem;
+
+                    &.desktop {
+                        font-size: 2rem;
+                        line-height: 2.5rem;
+                    }
                 }
 
                 .description {
                     max-width: 98%;
+                    color: $text;
+                    opacity: 0.7;
+                    margin: 0 0 15px 0;
                     font-size: 1rem;
                     font-weight: 700;
                     text-align: center;
-                    color: $text;
-                    margin: 0 0 15px 0;
-                    opacity: 0.7;
+
+                    &.desktop {
+                        font-size: 1.3rem;
+                    }
 
                     &.gameFont {
                         font-family: "IsaacGame";
                         font-size: 1.2rem;
+
+                        &.desktop {
+                            font-size: 1.5rem;
+                        }
                     }
                 }
 
@@ -538,28 +672,44 @@ body {
 
                 .type {
                     max-width: 90%;
+                    color: $text;
+                    margin: 50px 0 10px 0;
                     font-family: "Upheavtt";
                     font-size: 1.5rem;
                     text-align: center;
-                    margin: 50px 0 10px 0;
-                    color: $text;
+
+                    &.desktop {
+                        font-size: 2rem;
+                    }
                 }
 
                 .unlock {
                     max-width: 98%;
+                    color: $subtitle;
+                    margin: 0 0 10px 0;
                     font-size: 1rem;
                     font-weight: 700;
                     text-align: center;
-                    color: $subtitle;
-                    margin: 0 0 10px 0;
 
                     span {
                         color: $text;
                     }
 
+                    &.desktop {
+                        font-size: 1.3rem;
+                    }
+
                     &.gameFont {
                         font-family: "IsaacGame";
                         font-size: 1.2rem;
+
+                        &.desktop {
+                            font-size: 1.5rem;
+
+                            span {
+                                font-size: 1.5rem;
+                            }
+                        }
 
                         span {
                             font-family: "IsaacGame";
@@ -570,19 +720,31 @@ body {
 
                 .rechargeTime {
                     max-width: 98%;
+                    color: $subtitle;
+                    margin: 0 0 10px 0;
                     font-size: 1rem;
                     font-weight: 700;
                     text-align: center;
-                    color: $subtitle;
-                    margin: 0 0 10px 0;
 
                     span {
                         color: $text;
                     }
 
+                    &.desktop {
+                        font-size: 1.3rem;
+                    }
+
                     &.gameFont {
                         font-family: "IsaacGame";
                         font-size: 1.2rem;
+
+                        &.desktop {
+                            font-size: 1.5rem;
+
+                            span {
+                                font-size: 1.5rem;
+                            }
+                        }
 
                         span {
                             font-family: "IsaacGame";
@@ -593,19 +755,31 @@ body {
 
                 .pool {
                     max-width: 98%;
+                    color: $subtitle;
+                    margin: 0 0 10px 0;
                     font-size: 1rem;
                     font-weight: 700;
                     text-align: center;
-                    color: $subtitle;
-                    margin: 0 0 10px 0;
 
                     span {
                         color: $text;
                     }
 
+                    &.desktop {
+                        font-size: 1.3rem;
+                    }
+
                     &.gameFont {
                         font-family: "IsaacGame";
                         font-size: 1.2rem;
+
+                        &.desktop {
+                            font-size: 1.5rem;
+
+                            span {
+                                font-size: 1.5rem;
+                            }
+                        }
 
                         span {
                             color: $text;
@@ -620,11 +794,11 @@ body {
 
     .back {
         display: flex;
-        width: 100%;
-        height: 8%;
-        opacity: 0.4;
         align-items: center;
         justify-content: center;
+        height: 8%;
+        width: 100%;
+        opacity: 0.4;
         padding: 0 20px 12px;
 
         .backButton {
@@ -636,22 +810,22 @@ body {
             .icon {
                 transform: scaleX(-1);
                 height: 1.5rem;
-                min-height: 1.5rem;
                 max-height: 1.5rem;
+                min-height: 1.5rem;
                 width: 1.5rem;
-                min-width: 1.5rem;
                 max-width: 1.5rem;
+                min-width: 1.5rem;
             }
 
             .text {
                 width: fit-content;
+                color: $text;
+                margin-left: 10px;
                 font-family: "IsaacGame";
                 font-size: 2.5rem;
-                line-height: 2rem;
-                text-align: center;
-                color: $text;
                 font-weight: 700;
-                margin-left: 10px;
+                text-align: center;
+                line-height: 2rem;
             }
         }
     }
@@ -663,22 +837,139 @@ body {
 
 .camera {
     position: relative;
-    width: 100%;
     height: 100%;
+    width: 100%;
 
     .paperContainer {
         position: relative;
-        width: 100%;
         height: 92%;
+        width: 100%;
+
+        .content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+
+            .filler {
+                flex-grow: 1;
+                width: 100%;
+            }
+
+            .loadingIcon {
+                position: absolute;
+                z-index: 0;
+                animation: rotate 2s linear infinite;
+                margin: #{"min(42vw, 210px)"};
+
+                height: #{"min(16vw, 80px)"};
+                max-height: #{"min(16vw, 80px)"};
+                min-height: #{"min(16vw, 80px)"};
+                width: #{"min(16vw, 80px)"};
+                max-width: #{"min(16vw, 80px)"};
+                min-width: #{"min(16vw, 80px)"};
+
+                @keyframes rotate {
+                    from {
+                        transform: rotate(0deg);
+                    }
+                    to {
+                        transform: rotate(360deg);
+                    }
+                }
+            }
+
+            .webcam {
+                z-index: 10;
+                width: #{"min(78vw, 390px)"};
+                margin: #{"min(11vw, 55px)"};
+                @include border-radius(50vw);
+            }
+
+            .camBorder {
+                z-index: 20;
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: #{"min(80vw, 400px)"};
+                width: #{"min(80vw, 400px)"};
+                background-image: url("resources/icons/CamBorderWithFrame.svg");
+                background-size: 100%;
+                margin: #{"min(10vw, 50px)"};
+
+                &.withFrame {
+                    background-image: url("resources/icons/CamBorderWithFrame.svg");
+                }
+            }
+
+            .cropped {
+                width: 60vw;
+            }
+
+            .hint {
+                position: absolute;
+                margin-top: #{"min(100vw, 500px)"};
+                font-family: "IsaacGame";
+                font-size: 1.5rem;
+                font-weight: 700;
+                text-align: center;
+                line-height: 2rem;
+                opacity: 0.4;
+                max-width: 90%;
+            }
+
+            .camButton {
+                margin: 1rem 0;
+                padding: 1rem;
+
+                .camIcon {
+                    height: 3.5rem;
+                    max-height: 3.5rem;
+                    min-height: 3.5rem;
+                    width: 3.5rem;
+                    max-width: 3.5rem;
+                    min-width: 3.5rem;
+                }
+            }
+
+            .screenshot {
+                z-index: 10;
+                width: #{"min(78vw, 390px)"};
+                margin: #{"min(11vw, 55px)"};
+                @include border-radius(50vw);
+            }
+
+            .retake {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 7.5rem;
+
+                .retakeButton {
+                    width: fit-content;
+                    color: $text;
+                    font-family: "IsaacGame";
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    text-align: center;
+                    padding: 1rem;
+                    margin: 0.5rem;
+                }
+            }
+        }
     }
 
     .browse {
         display: flex;
-        width: 100%;
-        height: 8%;
-        opacity: 0.4;
         align-items: center;
         justify-content: center;
+        height: 8%;
+        width: 100%;
+        opacity: 0.4;
         padding: 0 20px 12px;
 
         .browseButton {
@@ -690,22 +981,22 @@ body {
             .icon {
                 transform: rotate(-80deg);
                 height: 1.5rem;
-                min-height: 1.5rem;
                 max-height: 1.5rem;
+                min-height: 1.5rem;
                 width: 1.5rem;
-                min-width: 1.5rem;
                 max-width: 1.5rem;
+                min-width: 1.5rem;
             }
 
             .text {
                 width: fit-content;
+                color: $text;
+                margin-left: 10px;
                 font-family: "IsaacGame";
                 font-size: 2.5rem;
-                line-height: 2rem;
-                text-align: center;
-                color: $text;
                 font-weight: 700;
-                margin-left: 10px;
+                text-align: center;
+                line-height: 2rem;
             }
         }
     }

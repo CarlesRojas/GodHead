@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import { animated } from "react-spring";
 import { useDrag } from "react-use-gesture";
+import { isMobile } from "react-device-detect";
 
 // Contexts
 import { Utils } from "contexts/Utils";
@@ -119,29 +120,48 @@ export default function App() {
     //   RENDER
     // #################################################
 
-    return (
-        <div className="app" onKeyDown={onKeyPressed} {...gestureBind()}>
-            <animated.div className="horizontalGrid" style={{ x: pagePositions.x }}>
-                <div className="left">
-                    <Options></Options>
-                </div>
+    if (isMobile)
+        var content = (
+            <div className="app" onKeyDown={onKeyPressed} {...gestureBind()}>
+                <animated.div className="horizontalGrid" style={{ x: pagePositions.x }}>
+                    <div className="cell">
+                        <Options></Options>
+                    </div>
 
-                <div className="middle"></div>
+                    <div className="cell"></div>
 
-                <div className="right">
-                    <Item></Item>
-                </div>
-            </animated.div>
+                    <div className="cell">
+                        <Item></Item>
+                    </div>
+                </animated.div>
 
-            <animated.div className="verticalGrid" style={{ x: pagePositions.x, y: pagePositions.y }}>
-                <div className="top">
-                    <Items></Items>
-                </div>
+                <animated.div className="verticalGrid" style={{ x: pagePositions.x, y: pagePositions.y }}>
+                    <div className="cell">
+                        <Items></Items>
+                    </div>
 
-                <div className="bottom">
-                    <Camera></Camera>
+                    <div className="cell">
+                        <Camera></Camera>
+                    </div>
+                </animated.div>
+            </div>
+        );
+    else
+        content = (
+            <div className="app">
+                <div className="desktopGrid">
+                    <div className="itemsCell">
+                        <Items></Items>
+                    </div>
+                    <div className="itemCell">
+                        <Item></Item>
+                    </div>
+                    <div className="optionsCell">
+                        <Options></Options>
+                    </div>
                 </div>
-            </animated.div>
-        </div>
-    );
+            </div>
+        );
+
+    return <React.Fragment>{content}</React.Fragment>;
 }
