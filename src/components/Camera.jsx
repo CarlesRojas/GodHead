@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import Webcam from "react-webcam";
-import SVG from "react-inlinesvg";
 import compareImages from "resemblejs/compareImages";
 
 // Components
@@ -20,7 +19,7 @@ export default function Camera() {
     // Contexts
     const { showTop, cameraActive } = useContext(Data);
     const { cropImage } = useContext(Utils);
-    const { ITEMS, TRINKETS, CARDS } = useContext(Icons);
+    const { ITEMS /*, TRINKETS, CARDS*/ } = useContext(Icons);
 
     // #################################################
     //   WEBCAM
@@ -31,7 +30,7 @@ export default function Camera() {
 
     // Image
     const [image, setImage] = useState(null);
-    const [croppedImage, setCroppedImage] = useState(null);
+    //const [croppedImage, setCroppedImage] = useState(null);
 
     // Capture a screenshot and save it in the register form state
     const capturePhoto = async () => {
@@ -111,7 +110,7 @@ export default function Camera() {
     //   RENDER
     // #################################################
 
-    var croppedImageDel = croppedImage ? <img src={croppedImage} alt="" className="cropped" /> : null;
+    //var croppedImageDel = croppedImage ? <img src={croppedImage} alt="" className="cropped" /> : null;
 
     // Placeholder camera
     var webcam = cameraActive ? (
