@@ -293,35 +293,35 @@ video {
         .top {
             height: 100%;
             width: 100%;
-            background-image: url("resources/background/Top.svg");
+            background-image: url("resources/background/Top.png");
             background-size: #{"min(calc(50vw - 5px), 200px)"};
         }
 
         .left {
             height: 100%;
             width: 100%;
-            background-image: url("resources/background/Left.svg");
+            background-image: url("resources/background/Left.png");
             background-size: #{"min(calc(50vw - 5px), 200px)"};
         }
 
         .middle {
             height: 100%;
             width: 100%;
-            background-image: url("resources/background/Middle.svg");
+            background-image: url("resources/background/Middle.png");
             background-size: #{"min(calc(50vw - 5px), 200px)"};
         }
 
         .right {
             height: 100%;
             width: 100%;
-            background-image: url("resources/background/Right.svg");
+            background-image: url("resources/background/Right.png");
             background-size: #{"min(calc(50vw - 5px), 200px)"};
         }
 
         .bottom {
             height: 100%;
             width: 100%;
-            background-image: url("resources/background/Bottom.svg");
+            background-image: url("resources/background/Bottom.png");
             background-size: #{"min(calc(50vw - 5px), 200px)"};
         }
     }
