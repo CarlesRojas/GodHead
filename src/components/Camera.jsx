@@ -1,6 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import Webcam from "react-webcam";
 import compareImages from "resemblejs/compareImages";
+import classnames from "classnames";
 
 // Components
 import Paper from "components/Paper";
@@ -17,9 +18,16 @@ import LoadingIcon from "resources/icons/Loading.svg";
 
 export default function Camera() {
     // Contexts
-    const { showTop, cameraActive } = useContext(Data);
+    const { showTop, cameraActive, selectedItem, setSelectedItem, setCurrentItem, showRight } = useContext(Data);
     const { cropImage } = useContext(Utils);
-    const { ITEMS /*, TRINKETS, CARDS*/ } = useContext(Icons);
+    const { ITEMS, TRINKETS, CARDS } = useContext(Icons);
+
+    // On item clicked
+    const onItemClicked = (id) => {
+        setSelectedItem(id);
+        setCurrentItem(id);
+        showRight();
+    };
 
     // #################################################
     //   WEBCAM
@@ -30,7 +38,6 @@ export default function Camera() {
 
     // Image
     const [image, setImage] = useState(null);
-    //const [croppedImage, setCroppedImage] = useState(null);
 
     // Capture a screenshot and save it in the register form state
     const capturePhoto = async () => {
@@ -38,14 +45,8 @@ export default function Camera() {
         setImage(imageSrc);
 
         var croppedImg = await cropImage(imageSrc, 90, 90, 220, 220);
-        //setCroppedImage(croppedImg);
 
         getMoreSimilar(croppedImg);
-    };
-
-    // Go back to retaking the screenshot
-    const retakePhoto = () => {
-        setImage(null);
     };
 
     // #################################################
@@ -56,22 +57,42 @@ export default function Camera() {
 
     // Check all items for the best matched
     const getMoreSimilar = async (croppedImg) => {
+        // Promises
+        var promises = [];
+        var promiseIds = [];
+
+        for (const id of Object.keys(ITEMS)) {
+            promises.push(
+                compareImages(croppedImg, ITEMS[id], {
+                    scaleToSameSize: true,
+                    ignore: "antialiasing",
+                })
+            );
+            promiseIds.push(id);
+        }
+
+        for (const id of Object.keys(TRINKETS)) {
+            promises.push(
+                compareImages(croppedImg, TRINKETS[id], {
+                    scaleToSameSize: true,
+                    ignore: "antialiasing",
+                })
+            );
+            promiseIds.push(id);
+        }
+
+        const results = await Promise.all(promises);
+
         // New array
         var ids = [];
         var match = [];
 
-        console.log(typeof ITEMS);
-        console.log(Object.keys(ITEMS));
-
-        for (const id of Object.keys(ITEMS)) {
-            const data = await compareImages(croppedImg, ITEMS[id], {
-                scaleToSameSize: true,
-                ignore: "antialiasing",
-            });
+        for (let i = 0; i < results.length; i++) {
+            const data = results[i];
+            const id = promiseIds[i];
 
             // Add to array if it is the first
             if (match.length <= 0) {
-                console.log("First");
                 ids.push(id);
                 match.push(data.rawMisMatchPercentage);
             }
@@ -86,7 +107,6 @@ export default function Camera() {
                     if (data.rawMisMatchPercentage < currMatch) targetPos = i;
                     else break;
                 }
-                console.log(targetPos);
 
                 // Add to array
                 if (targetPos >= 0) {
@@ -94,8 +114,7 @@ export default function Camera() {
                     match.splice(targetPos, 0, data.rawMisMatchPercentage);
 
                     // If array has more than 10 items, remove one
-                    if (match.length > 10) {
-                        console.log("Delete");
+                    if (match.length > 20) {
                         ids.pop();
                         match.pop();
                     }
@@ -106,26 +125,62 @@ export default function Camera() {
         setSimilarItems(ids);
     };
 
+    // Reset the cam
+    const resetCam = () => {
+        setImage(null);
+        setSimilarItems([]);
+    };
+
+    // #################################################
+    //   COMPONENT MOUNT
+    // #################################################
+
+    // On componente mount
+    useEffect(() => {
+        // Subscribe to error and disconnext events
+        window.PubSub.sub("resetCam", resetCam);
+
+        // Unsubscribe on unmount
+        return () => {
+            // Unsubscribe to error and disconnext events
+            window.PubSub.unsub("resetCam", resetCam);
+        };
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     // #################################################
     //   RENDER
     // #################################################
-
-    //var croppedImageDel = croppedImage ? <img src={croppedImage} alt="" className="cropped" /> : null;
 
     // Placeholder camera
     var webcam = cameraActive ? (
         <Webcam className="webcam" audio={false} videoConstraints={{ facingMode: "environment", aspectRatio: 1 }} mirrored={false} ref={cameraRef} screenshotFormat="image/png" />
     ) : null;
 
+    // Loading Items
+    var items =
+        similarItems.length > 0 ? (
+            <React.Fragment>
+                {similarItems.map((id, i) => {
+                    if (id.includes("c"))
+                        return <img src={CARDS[id]} alt="" className={classnames("itemIcon", { clicked: id === selectedItem })} key={i} onClick={() => onItemClicked(id)} />;
+                    else if (id.includes("t"))
+                        return <img src={TRINKETS[id]} alt="" className={classnames("itemIcon", { clicked: id === selectedItem })} key={i} onClick={() => onItemClicked(id)} />;
+                    else return <img src={ITEMS[id]} alt="" className={classnames("itemIcon", { clicked: id === selectedItem })} key={i} onClick={() => onItemClicked(id)} />;
+                })}
+            </React.Fragment>
+        ) : (
+            <img src={LoadingIcon} alt="" className="loadingItems" />
+        );
+
     var content = image ? (
         <div className="content">
             <img src={image} alt="" className="screenshot" />
             <div className="camBorder"></div>
-            <div className="filler"></div>
-            {/* {croppedImageDel} */}
-            <div className="possibleItems">{similarItems.join()}</div>
+            <div className="possibleItems">{items}</div>
             <div className="retake">
-                <div className="retakeButton" onClick={retakePhoto}>
+                <div className="retakeButton" onClick={resetCam}>
                     retake
                 </div>
             </div>

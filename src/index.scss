@@ -960,6 +960,46 @@ video {
                     margin: 0.5rem;
                 }
             }
+
+            .possibleItems {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                width: calc(100% - 10px);
+                margin: 0 5px;
+                flex-grow: 1;
+
+                .loadingItems {
+                    position: absolute;
+                    z-index: 0;
+                    animation: rotate 2s linear infinite;
+                    margin: #{"min(42vw, 210px)"};
+
+                    height: #{"min(16vw, 80px)"};
+                    max-height: #{"min(16vw, 80px)"};
+                    min-height: #{"min(16vw, 80px)"};
+                    width: #{"min(16vw, 80px)"};
+                    max-width: #{"min(16vw, 80px)"};
+                    min-width: #{"min(16vw, 80px)"};
+
+                    @keyframes rotate {
+                        from {
+                            transform: rotate(0deg);
+                        }
+                        to {
+                            transform: rotate(360deg);
+                        }
+                    }
+                }
+
+                .itemIcon {
+                    height: 50px;
+                    max-width: 70px;
+                    object-fit: contain;
+                    padding: 4px 6px;
+                }
+            }
         }
     }
 

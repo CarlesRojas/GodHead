@@ -29,10 +29,8 @@ export default class EventsPubSub {
 #######################################
 
     {
-        event:          onIndexChange
-        desciption:     Called when the index changes
-        parameters:     {subreddit, index}
-        subreddit:      Subreddit where the index has changed: "all", "homeSubreddit" or "subreddit"
-        index:          New index
+        event:          resetCam
+        desciption:     Called when the camera should reset
+        parameters:     {}
     },
 */

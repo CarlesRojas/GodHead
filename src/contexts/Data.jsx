@@ -58,6 +58,7 @@ const DataProvider = (props) => {
         currVerticalPos.current = "top";
         setCurrVerticalPos("top");
         setCameraActive(false);
+        window.PubSub.emit("resetCam");
     };
 
     // Show the bottom screen
