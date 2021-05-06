@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 
 import App from "App";
 import EventsPubSub from "EventsPubSub";
+import * as serviceWorker from "./serviceWorker";
 
 // Contexts
 import UtilsProvider from "contexts/Utils";
@@ -25,3 +26,6 @@ ReactDOM.render(
     </UtilsProvider>,
     document.getElementById("root")
 );
+
+// Register service worker
+serviceWorker.register();
