@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useRef, useState } from "react";
 import classnames from "classnames";
 import { isMobile } from "react-device-detect";
 
@@ -15,7 +15,10 @@ import SearchIcon from "resources/icons/Search.svg";
 
 export default function SearchBar() {
     // Contexts
-    const { currSearchText, searchText, setSearchText, itemsInSearch, setItemsInSearch, gameFont } = useContext(Data);
+    const { currSearchText, searchText, setSearchText, /* itemsInSearch, setItemsInSearch,*/ gameFont } = useContext(Data);
+
+    // Input placeholder
+    const [inputPlaceholder, setInputPlaceholder] = useState("search");
 
     // #################################################
     //   METHODS
@@ -58,15 +61,25 @@ export default function SearchBar() {
 
     return (
         <div className="searchBar">
-            <div className="grid">
+            <div className={classnames("grid", { desktop: !isMobile })}>
                 <img src={Left} alt="" className="side" />
                 <div className="middle"></div>
                 <img src={Right} alt="" className="side" />
             </div>
 
             <div className={classnames("children", { desktop: !isMobile })}>
-                <input type="text" placeholder="search" spellCheck="false" value={searchText} onChange={onTextChange} ref={inputRef} className={classnames({ gameFont: gameFont })} />
-                <img src={searchText === "" ? SearchIcon : CrossIcon} alt="" className={classnames("icon", { active: searchText !== "" })} onClick={iconClicked} />
+                <input
+                    type="text"
+                    placeholder={inputPlaceholder}
+                    spellCheck="false"
+                    value={searchText}
+                    onChange={onTextChange}
+                    onFocus={() => setInputPlaceholder("")}
+                    onBlur={() => setInputPlaceholder("search")}
+                    ref={inputRef}
+                    className={classnames({ gameFont: gameFont }, { desktop: !isMobile })}
+                />
+                <img src={searchText === "" ? SearchIcon : CrossIcon} alt="" className={classnames("icon", { active: searchText !== "" }, { desktop: !isMobile })} onClick={iconClicked} />
             </div>
         </div>
     );
