@@ -17,9 +17,9 @@ import expansionJSON from "resources/info/expansion.json";
 // Icons
 import ArrowIcon from "resources/icons/Arrow.svg";
 
-export default function Items() {
+export default function Items({ useSearch, startEmpty }) {
     // Contexts
-    const { separateByDLC, showRight, showBottom, setCurrentItem, selectedItem, setSelectedItem } = useContext(Data);
+    const { separateByDLC, showTop, setCurrentItem, selectedItem, setSelectedItem } = useContext(Data);
     const { ITEMS, TRINKETS, CARDS } = useContext(Icons);
 
     // #################################################
@@ -61,7 +61,7 @@ export default function Items() {
     const onItemClicked = (id) => {
         setSelectedItem(id);
         setCurrentItem(id);
-        showRight();
+        showTop();
     };
 
     // On item hover in
@@ -226,21 +226,9 @@ export default function Items() {
         );
     }
 
-    // Scan button
-    if (isMobile)
-        var scanButton = (
-            <div className="scan">
-                <div className="scanButton" onClick={showBottom}>
-                    <img src={ArrowIcon} alt="" className="icon" />
-                    <p className="text">scan</p>
-                </div>
-            </div>
-        );
-    else scanButton = null;
-
     return (
         <div className="items">
-            <div className={classnames("paperContainer", { desktop: !isMobile })}>
+            <div className={classnames("paperContainer", { desktop: !isMobile }, { hasSearchBar: startEmpty })}>
                 <Paper>
                     {content}
                     <div className={classnames("goToTop", { hide: isOnTop }, { desktop: !isMobile })} onClick={goToTop}>
@@ -248,8 +236,6 @@ export default function Items() {
                     </div>
                 </Paper>
             </div>
-
-            {scanButton}
         </div>
     );
 }

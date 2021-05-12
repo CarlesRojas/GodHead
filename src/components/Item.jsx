@@ -19,7 +19,7 @@ import ArrowIcon from "resources/icons/Arrow.svg";
 
 export default function Item() {
     // Contexts
-    const { currentItem, gameFont, showMiddle } = useContext(Data);
+    const { currentItem, gameFont, showBottom } = useContext(Data);
     const { ITEMS, TRINKETS, CARDS } = useContext(Icons);
 
     // Description ref
@@ -113,7 +113,7 @@ export default function Item() {
             </div>
 
             <div className="back">
-                <div className="backButton" onClick={showMiddle}>
+                <div className="backButton" onClick={showBottom}>
                     <img src={ArrowIcon} alt="" className="icon" />
                     <p className="text">back</p>
                 </div>

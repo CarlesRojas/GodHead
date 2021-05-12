@@ -11,64 +11,54 @@ const DataProvider = (props) => {
 
     // Current horizontal position: "left" "middle" "right"
     const currHorizontalPos = useRef("middle");
-    const [, setCurrHorizontalPos] = useState("middle");
+    const [horizontalPos, setHorizontalPos] = useState("middle");
 
     // Current vertical position: "top" "bottom"
-    const currVerticalPos = useRef("top");
-    const [, setCurrVerticalPos] = useState("top");
+    const currVerticalPos = useRef("bottom");
+    const [verticalPos, setVerticalPos] = useState("bottom");
 
     // Page position spring
     const [pagePositions, setPagePositions] = useSpring(() => ({
         x: 0,
-        y: 0,
+        y: -window.innerHeight * 1.2,
     }));
 
     // Show the left screen
     const showLeft = () => {
+        if (currVerticalPos.current !== "bottom") return;
         setPagePositions({ x: window.innerWidth * 1.25 });
         currHorizontalPos.current = "left";
-        setCurrHorizontalPos("left");
-        setCameraActive(false);
+        setHorizontalPos("left");
     };
 
     // Show the middle screen
     const showMiddle = () => {
+        if (currVerticalPos.current !== "bottom") return;
         setPagePositions({ x: 0 });
         currHorizontalPos.current = "middle";
-        setCurrHorizontalPos("middle");
-
-        // If in the bottom, show camera
-        if ((currVerticalPos.current = "bottom")) setCameraActive(true);
-        else setCameraActive(false);
+        setHorizontalPos("middle");
     };
 
     // Show the right screen
     const showRight = () => {
+        if (currVerticalPos.current !== "bottom") return;
         setPagePositions({ x: -window.innerWidth * 1.25 });
         currHorizontalPos.current = "right";
-        setCurrHorizontalPos("right");
-        setCameraActive(false);
+        setHorizontalPos("right");
     };
 
     // Show the top screen
     const showTop = () => {
-        if (currHorizontalPos.current !== "middle") return;
-
         setPagePositions({ y: 0 });
         currVerticalPos.current = "top";
-        setCurrVerticalPos("top");
-        setCameraActive(false);
-        window.PubSub.emit("resetCam");
+        setVerticalPos("top");
     };
 
     // Show the bottom screen
     const showBottom = () => {
-        if (currHorizontalPos.current !== "middle") return;
-
         setPagePositions({ y: -window.innerHeight * 1.2 });
         currVerticalPos.current = "bottom";
-        setCurrVerticalPos("bottom");
-        setCameraActive(true);
+        setVerticalPos("bottom");
     };
 
     // #################################################
@@ -86,19 +76,22 @@ const DataProvider = (props) => {
     const [currentItem, setCurrentItem] = useState("331");
 
     // #################################################
-    //   CAMERA
+    //   SEARCH
     // #################################################
 
-    const [cameraActive, setCameraActive] = useState(false);
+    const currSearchText = useRef("");
+    const [searchText, setSearchText] = useState("");
+    const [itemsInSearch, setItemsInSearch] = useState([]);
 
     return (
         <Data.Provider
             value={{
                 // PAGE NAVIGATION
+                horizontalPos,
+                verticalPos,
                 currHorizontalPos,
                 currVerticalPos,
                 pagePositions,
-                setPagePositions,
                 showLeft,
                 showMiddle,
                 showRight,
@@ -117,9 +110,12 @@ const DataProvider = (props) => {
                 selectedItem,
                 setSelectedItem,
 
-                // CAMERA
-                cameraActive,
-                setCameraActive,
+                // SEARCH
+                currSearchText,
+                searchText,
+                setSearchText,
+                itemsInSearch,
+                setItemsInSearch,
             }}
         >
             {props.children}
