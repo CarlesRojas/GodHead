@@ -28,6 +28,9 @@ $text: #3c3536;
 $subtitle: #686360;
 $font-size: 18px;
 $line-height: 22px;
+$navbar-height: 3.5rem;
+$searchbar-height: 4rem;
+$desktop-gap: 20px;
 
 // #######################################
 //      MIXINS
@@ -245,7 +248,7 @@ video {
             "items items items options";
         height: 100vh;
         width: 100vw;
-        gap: 50px;
+        gap: $desktop-gap;
 
         .itemsCell {
             position: relative;
@@ -295,8 +298,8 @@ video {
         gap: 0px 0px;
 
         .corner {
-            height: #{"min(calc(50vw - 5px), 200px)"};
-            width: #{"min(calc(50vw - 5px), 200px)"};
+            height: #{"min(calc(50vw - 5px), 175px)"};
+            width: #{"min(calc(50vw - 5px), 175px)"};
         }
 
         .top {
@@ -304,7 +307,7 @@ video {
             width: 100%;
             image-rendering: pixelated;
             background-image: url("resources/background/Top.png");
-            background-size: #{"min(calc(50vw - 5px), 200px)"};
+            background-size: #{"min(calc(50vw - 5px), 175px)"};
         }
 
         .left {
@@ -312,7 +315,7 @@ video {
             width: 100%;
             image-rendering: pixelated;
             background-image: url("resources/background/Left.png");
-            background-size: #{"min(calc(50vw - 5px), 200px)"};
+            background-size: #{"min(calc(50vw - 5px), 175px)"};
         }
 
         .middle {
@@ -320,7 +323,7 @@ video {
             width: 100%;
             image-rendering: pixelated;
             background-image: url("resources/background/Middle.png");
-            background-size: #{"min(calc(50vw - 5px), 200px)"};
+            background-size: #{"min(calc(50vw - 5px), 175px)"};
         }
 
         .right {
@@ -328,7 +331,7 @@ video {
             width: 100%;
             image-rendering: pixelated;
             background-image: url("resources/background/Right.png");
-            background-size: #{"min(calc(50vw - 5px), 200px)"};
+            background-size: #{"min(calc(50vw - 5px), 175px)"};
         }
 
         .bottom {
@@ -336,7 +339,7 @@ video {
             width: 100%;
             image-rendering: pixelated;
             background-image: url("resources/background/Bottom.png");
-            background-size: #{"min(calc(50vw - 5px), 200px)"};
+            background-size: #{"min(calc(50vw - 5px), 175px)"};
         }
     }
 
@@ -360,7 +363,7 @@ video {
 // #######################################
 
 .searchBar {
-    height: 5rem;
+    height: $searchbar-height;
     width: 100%;
 
     .grid {
@@ -369,7 +372,8 @@ video {
         grid-template-columns: auto 1fr auto;
         grid-template-rows: 1fr;
         width: calc(100% - 10px);
-        margin: 15px 5px 5px;
+        height: calc(#{$searchbar-height} - 10px);
+        margin: 5px;
         gap: 0px 0px;
         align-items: center;
 
@@ -378,7 +382,7 @@ video {
         }
 
         .side {
-            width: #{"min(calc(40vw - 5px), 200px)"};
+            height: calc(#{$searchbar-height} - 10px);
         }
 
         .middle {
@@ -386,22 +390,22 @@ video {
             width: 100%;
             image-rendering: pixelated;
             background-image: url("resources/background/SearchMiddle.png");
-            background-size: #{"min(calc(40vw - 5px), 200px)"};
+            background-size: auto calc(#{$searchbar-height} - 10px);
         }
     }
 
     .children {
         position: absolute;
-        height: calc(5rem - 45px);
-        width: calc(100% - 40px);
+        width: calc(100% - 23px);
+        height: calc(#{$searchbar-height} - 20px);
         overflow: visible;
-        margin: 20px;
+        margin: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
 
         input {
-            width: calc(100% - 2rem);
+            width: calc(100% - 2.5rem);
             height: 55%;
             text-align: center;
             background: none;
@@ -415,31 +419,18 @@ video {
                 font-family: "IsaacGame";
                 font-size: 2rem;
             }
-
-            &.desktop {
-                width: calc(100% - 3rem);
-            }
         }
 
         .icon {
             transition: opacity 0.2s ease-in-out;
-            height: 1.5rem;
-            max-height: 1.5rem;
-            min-height: 1.5rem;
-            width: 1.5rem;
-            max-width: 1.5rem;
-            min-width: 1.5rem;
-            padding: 2px;
+            height: 2rem;
+            max-height: 2rem;
+            min-height: 2rem;
+            width: 2rem;
+            max-width: 2rem;
+            min-width: 2rem;
+            padding: 0.3rem;
             opacity: 0.4;
-
-            &.desktop {
-                height: 1.8rem;
-                max-height: 1.8rem;
-                min-height: 1.8rem;
-                width: 1.8rem;
-                max-width: 1.8rem;
-                min-width: 1.8rem;
-            }
 
             &.active {
                 opacity: 0.8;
@@ -459,11 +450,11 @@ video {
 
     .paperContainer {
         position: relative;
-        height: 92%;
+        height: calc(100% - #{$navbar-height});
         width: 100%;
 
         &.hasSearchBar {
-            height: calc(100% - 5rem);
+            height: calc(100% - #{$searchbar-height});
         }
 
         &.desktop {
@@ -654,7 +645,7 @@ video {
 
     .paperContainer {
         position: relative;
-        height: 92%;
+        height: calc(100% - #{$navbar-height});
         width: 100%;
 
         &.desktop {
@@ -915,12 +906,12 @@ video {
 
     .paperContainer {
         position: relative;
-        height: 92%;
+        height: calc(100% - #{$navbar-height});
         width: 100%;
 
         &.desktop {
-            margin-top: 2rem;
-            height: calc(100% - 7rem);
+            margin-top: $desktop-gap;
+            height: calc(calc(100% - #{$searchbar-height}) - #{$desktop-gap});
         }
 
         .title {
@@ -981,7 +972,7 @@ video {
 
     .paperContainer {
         position: relative;
-        height: 92%;
+        height: calc(100% - #{$navbar-height});
         width: 100%;
 
         &.desktop {
@@ -1043,7 +1034,7 @@ video {
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 8%;
+    height: $navbar-height;
     width: 100%;
     display: flex;
     align-items: center;

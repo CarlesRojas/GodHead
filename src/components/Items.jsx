@@ -17,9 +17,9 @@ import expansionJSON from "resources/info/expansion.json";
 // Icons
 import ArrowIcon from "resources/icons/Arrow.svg";
 
-export default function Items({ useSearch, startEmpty }) {
+export default function Items({ useSearch, startEmpty, objectID }) {
     // Contexts
-    const { separateByDLC, showTop, setCurrentItem, selectedItem, setSelectedItem } = useContext(Data);
+    const { separateByDLC, showTop, setCurrentItem, selectedItem, setSelectedItem, itemsInSearch } = useContext(Data);
     const { ITEMS, TRINKETS, CARDS } = useContext(Icons);
 
     // #################################################
@@ -45,8 +45,8 @@ export default function Items({ useSearch, startEmpty }) {
 
     // Open or close sections
     const openCloseSection = (sectionName) => {
-        var section = document.getElementById(sectionName);
-        var arrow = document.getElementById(`${sectionName}_arrow`);
+        var section = document.getElementById(`${sectionName}_${objectID}`);
+        var arrow = document.getElementById(`${sectionName}_arrow_${objectID}`);
 
         if (section.classList.contains("closed")) {
             section.classList.remove("closed");
@@ -101,16 +101,21 @@ export default function Items({ useSearch, startEmpty }) {
             <div className={classnames("list", { desktop: !isMobile })} ref={listRef} onScroll={onListScroll}>
                 {dlcOrder.current.map((name, i) => {
                     const order = expansionJSON[name];
+
                     return (
                         <React.Fragment key={i}>
                             <div className={classnames("titleContainer", { desktop: !isMobile })} onClick={() => openCloseSection(name)}>
-                                <img id={`${name}_arrow`} src={ArrowIcon} alt="" className="arrow" />
+                                <img id={`${name}_arrow_${objectID}`} src={ArrowIcon} alt="" className="arrow" />
                                 <p className={classnames("title", { desktop: !isMobile })}>{name}</p>
                                 <div className="filler"></div>
                             </div>
 
-                            <div id={name} className="itemsContainer">
+                            <div id={`${name}_${objectID}`} className="itemsContainer">
                                 {order.map((id, j) => {
+                                    // If not in search
+                                    if (startEmpty && useSearch && !itemsInSearch.includes(id)) return null;
+                                    else if (useSearch && itemsInSearch.length > 0 && !itemsInSearch.includes(id)) return null;
+
                                     if (id.includes("c"))
                                         return (
                                             <img
@@ -161,12 +166,16 @@ export default function Items({ useSearch, startEmpty }) {
         content = (
             <div className={classnames("list", { desktop: !isMobile })} ref={listRef} onScroll={onListScroll}>
                 <div className={classnames("titleContainer", { desktop: !isMobile })} onClick={() => openCloseSection("items")}>
-                    <img id={"items_arrow"} src={ArrowIcon} alt="" className="arrow" />
+                    <img id={`items_arrow_${objectID}`} src={ArrowIcon} alt="" className="arrow" />
                     <p className={classnames("title", { desktop: !isMobile })}>Items</p>
                     <div className="filler"></div>
                 </div>
-                <div id={"items"} className="itemsContainer">
+                <div id={`items_${objectID}`} className="itemsContainer">
                     {coloredItemsJSON.map((id, j) => {
+                        // If not in search
+                        if (startEmpty && useSearch && !itemsInSearch.includes(id)) return null;
+                        else if (useSearch && itemsInSearch.length > 0 && !itemsInSearch.includes(id)) return null;
+
                         return (
                             <img
                                 src={ITEMS[id]}
@@ -182,12 +191,17 @@ export default function Items({ useSearch, startEmpty }) {
                 </div>
 
                 <div className={classnames("titleContainer", { desktop: !isMobile })} onClick={() => openCloseSection("trinkets")}>
-                    <img id={"trinkets_arrow"} src={ArrowIcon} alt="" className="arrow" />
+                    <img id={`trinkets_arrow_${objectID}`} src={ArrowIcon} alt="" className="arrow" />
                     <p className={classnames("title", { desktop: !isMobile })}>Trinkets</p>
                     <div className="filler"></div>
                 </div>
-                <div id={"trinkets"} className="itemsContainer">
+
+                <div id={`trinkets_${objectID}`} className="itemsContainer">
                     {coloredTrinketsJSON.map((id, j) => {
+                        // If not in search
+                        if (startEmpty && useSearch && !itemsInSearch.includes(id)) return null;
+                        else if (useSearch && itemsInSearch.length > 0 && !itemsInSearch.includes(id)) return null;
+
                         return (
                             <img
                                 src={TRINKETS[id]}
@@ -203,12 +217,17 @@ export default function Items({ useSearch, startEmpty }) {
                 </div>
 
                 <div className={classnames("titleContainer", { desktop: !isMobile })} onClick={() => openCloseSection("cards")}>
-                    <img id={"cards_arrow"} src={ArrowIcon} alt="" className="arrow" />
+                    <img id={`cards_arrow_${objectID}`} src={ArrowIcon} alt="" className="arrow" />
                     <p className={classnames("title", { desktop: !isMobile })}>Consumables</p>
                     <div className="filler"></div>
                 </div>
-                <div id={"cards"} className="itemsContainer">
+
+                <div id={`cards_${objectID}`} className="itemsContainer">
                     {coloredCardsJSON.map((id, j) => {
+                        // If not in search
+                        if (startEmpty && useSearch && !itemsInSearch.includes(id)) return null;
+                        else if (useSearch && itemsInSearch.length > 0 && !itemsInSearch.includes(id)) return null;
+
                         return (
                             <img
                                 src={CARDS[id]}

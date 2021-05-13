@@ -1,4 +1,4 @@
-import React, { createContext, useState, useRef } from "react";
+import React, { createContext, useState, useRef, useEffect } from "react";
 import { useSpring } from "react-spring";
 
 // Data Context
@@ -24,41 +24,63 @@ const DataProvider = (props) => {
     }));
 
     // Show the left screen
-    const showLeft = () => {
+    const showLeft = (noAnimation = false) => {
         if (currVerticalPos.current !== "bottom") return;
-        setPagePositions({ x: window.innerWidth * 1.25 });
+
+        if (noAnimation) pagePositions.x.set(window.innerWidth * 1.25);
+        else setPagePositions({ x: window.innerWidth * 1.25 });
         currHorizontalPos.current = "left";
         setHorizontalPos("left");
     };
 
     // Show the middle screen
-    const showMiddle = () => {
+    const showMiddle = (noAnimation = false) => {
         if (currVerticalPos.current !== "bottom") return;
-        setPagePositions({ x: 0 });
+
+        if (noAnimation) pagePositions.x.set(0);
+        else setPagePositions({ x: 0 });
+
         currHorizontalPos.current = "middle";
         setHorizontalPos("middle");
     };
 
     // Show the right screen
-    const showRight = () => {
+    const showRight = (noAnimation = false) => {
         if (currVerticalPos.current !== "bottom") return;
-        setPagePositions({ x: -window.innerWidth * 1.25 });
+
+        if (noAnimation) pagePositions.x.set(-window.innerWidth * 1.25);
+        else setPagePositions({ x: -window.innerWidth * 1.25 });
+
         currHorizontalPos.current = "right";
         setHorizontalPos("right");
     };
 
     // Show the top screen
-    const showTop = () => {
-        setPagePositions({ y: 0 });
+    const showTop = (noAnimation = false) => {
+        if (noAnimation) pagePositions.y.set(0);
+        else setPagePositions({ y: 0 });
+
         currVerticalPos.current = "top";
         setVerticalPos("top");
     };
 
     // Show the bottom screen
-    const showBottom = () => {
-        setPagePositions({ y: -window.innerHeight * 1.2 });
+    const showBottom = (noAnimation = false) => {
+        if (noAnimation) pagePositions.y.set(-window.innerHeight * 1.2);
+        else setPagePositions({ y: -window.innerHeight * 1.2 });
+
         currVerticalPos.current = "bottom";
         setVerticalPos("bottom");
+    };
+
+    // Resize actions
+    const onResize = () => {
+        if (currHorizontalPos.current === "left") showLeft(true);
+        else if (currHorizontalPos.current === "middle") showMiddle(true);
+        else if (currHorizontalPos.current === "right") showRight(true);
+
+        if (currVerticalPos.current === "top") showTop(true);
+        else if (currVerticalPos.current === "bottom") showBottom(true);
     };
 
     // #################################################
@@ -80,8 +102,28 @@ const DataProvider = (props) => {
     // #################################################
 
     const currSearchText = useRef("");
-    const [searchText, setSearchText] = useState("");
     const [itemsInSearch, setItemsInSearch] = useState([]);
+
+    // #################################################
+    //   COMPONENT MOUNT
+    // #################################################
+
+    // On componente mount
+    useEffect(() => {
+        // Subscribe to events
+        window.addEventListener("resize", onResize);
+
+        return () => {
+            // Unsubscribe from events
+            window.removeEventListener("resize", onResize);
+        };
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    // #################################################
+    //   PROVIDE DATA
+    // #################################################
 
     return (
         <Data.Provider
@@ -112,8 +154,6 @@ const DataProvider = (props) => {
 
                 // SEARCH
                 currSearchText,
-                searchText,
-                setSearchText,
                 itemsInSearch,
                 setItemsInSearch,
             }}

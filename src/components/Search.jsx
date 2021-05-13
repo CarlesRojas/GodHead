@@ -19,7 +19,7 @@ export default function Search() {
         <div className="search">
             <SearchBar></SearchBar>
             <div className={classnames("paperContainer", { desktop: !isMobile })}>
-                <Items useSearch={false} startEmpty={true}></Items>
+                <Items useSearch={true} startEmpty={true} objectID={"search"}></Items>
             </div>
         </div>
     );

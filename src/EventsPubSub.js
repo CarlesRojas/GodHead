@@ -29,8 +29,8 @@ export default class EventsPubSub {
 #######################################
 
     {
-        event:          resetCam
-        desciption:     Called when the camera should reset
+        event:          onClearSearch
+        desciption:     Called when the search should be cleared
         parameters:     {}
     },
 */

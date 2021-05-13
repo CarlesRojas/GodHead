@@ -19,7 +19,7 @@ export default function App() {
     const { setSeparateByDLC, setGameFont, pagePositions } = useContext(Data);
 
     // #################################################
-    //   GET OPTIONS
+    //   METHODS
     // #################################################
 
     // Get options
@@ -96,7 +96,7 @@ export default function App() {
                     </div>
 
                     <div className="cell">
-                        <Items useSearch={false} startEmpty={false}></Items>
+                        <Items useSearch={false} startEmpty={false} objectID={"mobile"}></Items>
                     </div>
 
                     <div className="cell">
@@ -114,7 +114,7 @@ export default function App() {
             <div className="app">
                 <div className="desktopGrid">
                     <div className="itemsCell">
-                        <Items></Items>
+                        <Items useSearch={true} startEmpty={false} objectID={"desktop"}></Items>
                     </div>
                     <div className="itemCell">
                         <Item></Item>
