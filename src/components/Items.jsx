@@ -19,7 +19,7 @@ import ArrowIcon from "resources/icons/Arrow.svg";
 
 export default function Items({ useSearch, startEmpty, objectID }) {
     // Contexts
-    const { separateByDLC, showTop, setCurrentItem, selectedItem, setSelectedItem, itemsInSearch } = useContext(Data);
+    const { separateByDLC, showTop, setCurrentItem, selectedItem, setSelectedItem, itemsInSearch, currSearchText } = useContext(Data);
     const { ITEMS, TRINKETS, CARDS } = useContext(Icons);
 
     // #################################################
@@ -97,10 +97,25 @@ export default function Items({ useSearch, startEmpty, objectID }) {
 
     // Separate by dlc
     if (separateByDLC) {
+        var filteredExpansionJSON = {};
+
+        // Use search
+        if ((startEmpty && useSearch) || (useSearch && currSearchText.current.length > 0)) {
+            for (const [key, value] of Object.entries(expansionJSON)) filteredExpansionJSON[key] = value.filter((id) => itemsInSearch.includes(id));
+        }
+
+        // Do not use search
+        else {
+            filteredExpansionJSON = { ...expansionJSON };
+        }
+
         var content = (
             <div className={classnames("list", { desktop: !isMobile })} ref={listRef} onScroll={onListScroll}>
                 {dlcOrder.current.map((name, i) => {
-                    const order = expansionJSON[name];
+                    var order = filteredExpansionJSON[name];
+
+                    // Do not return group if it is empty
+                    if (order.length <= 0) return null;
 
                     return (
                         <React.Fragment key={i}>
@@ -112,10 +127,6 @@ export default function Items({ useSearch, startEmpty, objectID }) {
 
                             <div id={`${name}_${objectID}`} className="itemsContainer">
                                 {order.map((id, j) => {
-                                    // If not in search
-                                    if (startEmpty && useSearch && !itemsInSearch.includes(id)) return null;
-                                    else if (useSearch && itemsInSearch.length > 0 && !itemsInSearch.includes(id)) return null;
-
                                     if (id.includes("c"))
                                         return (
                                             <img
@@ -163,84 +174,111 @@ export default function Items({ useSearch, startEmpty, objectID }) {
 
     // Separate only by type
     else {
+        var filteredColoredItemsJSON = [];
+        var filteredColoredTrinketsJSON = [];
+        var filteredColoredCardsJSON = [];
+
+        // Use search
+        if ((startEmpty && useSearch) || (useSearch && currSearchText.current.length > 0)) {
+            filteredColoredItemsJSON = coloredItemsJSON.filter((id) => itemsInSearch.includes(id));
+            filteredColoredTrinketsJSON = coloredTrinketsJSON.filter((id) => itemsInSearch.includes(id));
+            filteredColoredCardsJSON = coloredCardsJSON.filter((id) => itemsInSearch.includes(id));
+        }
+
+        // Do not use search
+        else {
+            filteredColoredItemsJSON = [...coloredItemsJSON];
+            filteredColoredTrinketsJSON = [...coloredTrinketsJSON];
+            filteredColoredCardsJSON = [...coloredCardsJSON];
+        }
+
+        // Items
+        var itemsDOM =
+            filteredColoredItemsJSON.length <= 0 ? null : (
+                <React.Fragment>
+                    <div className={classnames("titleContainer", { desktop: !isMobile })} onClick={() => openCloseSection("items")}>
+                        <img id={`items_arrow_${objectID}`} src={ArrowIcon} alt="" className="arrow" />
+                        <p className={classnames("title", { desktop: !isMobile })}>Items</p>
+                        <div className="filler"></div>
+                    </div>
+                    <div id={`items_${objectID}`} className="itemsContainer">
+                        {filteredColoredItemsJSON.map((id, j) => {
+                            return (
+                                <img
+                                    src={ITEMS[id]}
+                                    alt=""
+                                    className={classnames("itemIcon", { desktop: !isMobile }, { clicked: id === selectedItem })}
+                                    key={j}
+                                    onClick={() => onItemClicked(id)}
+                                    onMouseEnter={() => onItemHoverIn(id)}
+                                    onMouseLeave={() => onItemHoverOut(id)}
+                                />
+                            );
+                        })}
+                    </div>
+                </React.Fragment>
+            );
+
+        // Trinkets
+        var trinketsDOM =
+            filteredColoredTrinketsJSON.length <= 0 ? null : (
+                <React.Fragment>
+                    <div className={classnames("titleContainer", { desktop: !isMobile })} onClick={() => openCloseSection("trinkets")}>
+                        <img id={`trinkets_arrow_${objectID}`} src={ArrowIcon} alt="" className="arrow" />
+                        <p className={classnames("title", { desktop: !isMobile })}>Trinkets</p>
+                        <div className="filler"></div>
+                    </div>
+
+                    <div id={`trinkets_${objectID}`} className="itemsContainer">
+                        {filteredColoredTrinketsJSON.map((id, j) => {
+                            return (
+                                <img
+                                    src={TRINKETS[id]}
+                                    alt=""
+                                    className={classnames("itemIcon", { desktop: !isMobile }, { clicked: id === selectedItem })}
+                                    key={j}
+                                    onClick={() => onItemClicked(id)}
+                                    onMouseEnter={() => onItemHoverIn(id)}
+                                    onMouseLeave={() => onItemHoverOut(id)}
+                                />
+                            );
+                        })}
+                    </div>
+                </React.Fragment>
+            );
+
+        var cardsDOM =
+            filteredColoredCardsJSON.length <= 0 ? null : (
+                <React.Fragment>
+                    <div className={classnames("titleContainer", { desktop: !isMobile })} onClick={() => openCloseSection("cards")}>
+                        <img id={`cards_arrow_${objectID}`} src={ArrowIcon} alt="" className="arrow" />
+                        <p className={classnames("title", { desktop: !isMobile })}>Consumables</p>
+                        <div className="filler"></div>
+                    </div>
+
+                    <div id={`cards_${objectID}`} className="itemsContainer">
+                        {filteredColoredCardsJSON.map((id, j) => {
+                            return (
+                                <img
+                                    src={CARDS[id]}
+                                    alt=""
+                                    className={classnames("itemIcon", { desktop: !isMobile }, { clicked: id === selectedItem })}
+                                    key={j}
+                                    onClick={() => onItemClicked(id)}
+                                    onMouseEnter={() => onItemHoverIn(id)}
+                                    onMouseLeave={() => onItemHoverOut(id)}
+                                />
+                            );
+                        })}
+                    </div>
+                </React.Fragment>
+            );
+
         content = (
             <div className={classnames("list", { desktop: !isMobile })} ref={listRef} onScroll={onListScroll}>
-                <div className={classnames("titleContainer", { desktop: !isMobile })} onClick={() => openCloseSection("items")}>
-                    <img id={`items_arrow_${objectID}`} src={ArrowIcon} alt="" className="arrow" />
-                    <p className={classnames("title", { desktop: !isMobile })}>Items</p>
-                    <div className="filler"></div>
-                </div>
-                <div id={`items_${objectID}`} className="itemsContainer">
-                    {coloredItemsJSON.map((id, j) => {
-                        // If not in search
-                        if (startEmpty && useSearch && !itemsInSearch.includes(id)) return null;
-                        else if (useSearch && itemsInSearch.length > 0 && !itemsInSearch.includes(id)) return null;
-
-                        return (
-                            <img
-                                src={ITEMS[id]}
-                                alt=""
-                                className={classnames("itemIcon", { desktop: !isMobile }, { clicked: id === selectedItem })}
-                                key={j}
-                                onClick={() => onItemClicked(id)}
-                                onMouseEnter={() => onItemHoverIn(id)}
-                                onMouseLeave={() => onItemHoverOut(id)}
-                            />
-                        );
-                    })}
-                </div>
-
-                <div className={classnames("titleContainer", { desktop: !isMobile })} onClick={() => openCloseSection("trinkets")}>
-                    <img id={`trinkets_arrow_${objectID}`} src={ArrowIcon} alt="" className="arrow" />
-                    <p className={classnames("title", { desktop: !isMobile })}>Trinkets</p>
-                    <div className="filler"></div>
-                </div>
-
-                <div id={`trinkets_${objectID}`} className="itemsContainer">
-                    {coloredTrinketsJSON.map((id, j) => {
-                        // If not in search
-                        if (startEmpty && useSearch && !itemsInSearch.includes(id)) return null;
-                        else if (useSearch && itemsInSearch.length > 0 && !itemsInSearch.includes(id)) return null;
-
-                        return (
-                            <img
-                                src={TRINKETS[id]}
-                                alt=""
-                                className={classnames("itemIcon", { desktop: !isMobile }, { clicked: id === selectedItem })}
-                                key={j}
-                                onClick={() => onItemClicked(id)}
-                                onMouseEnter={() => onItemHoverIn(id)}
-                                onMouseLeave={() => onItemHoverOut(id)}
-                            />
-                        );
-                    })}
-                </div>
-
-                <div className={classnames("titleContainer", { desktop: !isMobile })} onClick={() => openCloseSection("cards")}>
-                    <img id={`cards_arrow_${objectID}`} src={ArrowIcon} alt="" className="arrow" />
-                    <p className={classnames("title", { desktop: !isMobile })}>Consumables</p>
-                    <div className="filler"></div>
-                </div>
-
-                <div id={`cards_${objectID}`} className="itemsContainer">
-                    {coloredCardsJSON.map((id, j) => {
-                        // If not in search
-                        if (startEmpty && useSearch && !itemsInSearch.includes(id)) return null;
-                        else if (useSearch && itemsInSearch.length > 0 && !itemsInSearch.includes(id)) return null;
-
-                        return (
-                            <img
-                                src={CARDS[id]}
-                                alt=""
-                                className={classnames("itemIcon", { desktop: !isMobile }, { clicked: id === selectedItem })}
-                                key={j}
-                                onClick={() => onItemClicked(id)}
-                                onMouseEnter={() => onItemHoverIn(id)}
-                                onMouseLeave={() => onItemHoverOut(id)}
-                            />
-                        );
-                    })}
-                </div>
+                {itemsDOM}
+                {trinketsDOM}
+                {cardsDOM}
             </div>
         );
     }

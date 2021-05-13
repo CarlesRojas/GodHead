@@ -195,6 +195,10 @@ video {
     background-repeat: repeat;
     background-size: 50vw;
 
+    &.desktop {
+        background-size: 400px;
+    }
+
     .horizontalGrid {
         position: absolute;
         display: grid;

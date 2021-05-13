@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import { animated } from "react-spring";
 import { isMobile } from "react-device-detect";
+import classnames from "classnames";
 
 // Contexts
 import { Utils } from "contexts/Utils";
@@ -81,7 +82,7 @@ export default function App() {
 
     if (isMobile)
         var content = (
-            <div className="app">
+            <div className={classnames("app", { desktop: !isMobile })}>
                 <animated.div className="verticalGrid" style={{ y: pagePositions.y }}>
                     <div className="cell">
                         <Item></Item>
@@ -111,7 +112,7 @@ export default function App() {
         );
     else
         content = (
-            <div className="app">
+            <div className={classnames("app", { desktop: !isMobile })}>
                 <div className="desktopGrid">
                     <div className="itemsCell">
                         <Items useSearch={true} startEmpty={false} objectID={"desktop"}></Items>
