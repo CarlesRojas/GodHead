@@ -113,7 +113,7 @@ export default function Item() {
             </div>
 
             <div className="back">
-                <div className="backButton" onClick={showBottom}>
+                <div className="backButton" onClick={() => showBottom(false)}>
                     <img src={ArrowIcon} alt="" className="icon" />
                     <p className="text">back</p>
                 </div>

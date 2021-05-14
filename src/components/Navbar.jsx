@@ -18,9 +18,9 @@ export default function Navbar() {
 
     return (
         <div className="navbar">
-            <img src={OptionsIcon} alt="" className={classnames("icon", { selected: horizontalPos === "left" })} onClick={showLeft} />
-            <img src={ItemsIcon} alt="" className={classnames("icon", "bigger", { selected: horizontalPos === "middle" })} onClick={showMiddle} />
-            <img src={SearchIcon} alt="" className={classnames("icon", { selected: horizontalPos === "right" })} onClick={showRight} />
+            <img src={OptionsIcon} alt="" className={classnames("icon", { selected: horizontalPos === "left" })} onClick={() => showLeft(false)} />
+            <img src={ItemsIcon} alt="" className={classnames("icon", "bigger", { selected: horizontalPos === "middle" })} onClick={() => showMiddle(false)} />
+            <img src={SearchIcon} alt="" className={classnames("icon", { selected: horizontalPos === "right" })} onClick={() => showRight(false)} />
         </div>
     );
 }

@@ -24,39 +24,46 @@ const DataProvider = (props) => {
     }));
 
     // Show the left screen
-    const showLeft = (noAnimation = false) => {
+    const showLeft = (noAnimation) => {
         if (currVerticalPos.current !== "bottom") return;
 
         if (noAnimation) pagePositions.x.set(window.innerWidth * 1.25);
         else setPagePositions({ x: window.innerWidth * 1.25 });
+
+        window.PubSub.emit("onClearSearch");
+
         currHorizontalPos.current = "left";
         setHorizontalPos("left");
     };
 
     // Show the middle screen
-    const showMiddle = (noAnimation = false) => {
+    const showMiddle = (noAnimation) => {
         if (currVerticalPos.current !== "bottom") return;
 
         if (noAnimation) pagePositions.x.set(0);
         else setPagePositions({ x: 0 });
+
+        window.PubSub.emit("onClearSearch");
 
         currHorizontalPos.current = "middle";
         setHorizontalPos("middle");
     };
 
     // Show the right screen
-    const showRight = (noAnimation = false) => {
+    const showRight = (noAnimation) => {
         if (currVerticalPos.current !== "bottom") return;
 
         if (noAnimation) pagePositions.x.set(-window.innerWidth * 1.25);
         else setPagePositions({ x: -window.innerWidth * 1.25 });
+
+        window.PubSub.emit("onFocusSearch");
 
         currHorizontalPos.current = "right";
         setHorizontalPos("right");
     };
 
     // Show the top screen
-    const showTop = (noAnimation = false) => {
+    const showTop = (noAnimation) => {
         if (noAnimation) pagePositions.y.set(0);
         else setPagePositions({ y: 0 });
 
@@ -65,7 +72,7 @@ const DataProvider = (props) => {
     };
 
     // Show the bottom screen
-    const showBottom = (noAnimation = false) => {
+    const showBottom = (noAnimation) => {
         if (noAnimation) pagePositions.y.set(-window.innerHeight * 1.2);
         else setPagePositions({ y: -window.innerHeight * 1.2 });
 

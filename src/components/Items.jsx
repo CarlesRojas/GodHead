@@ -61,7 +61,7 @@ export default function Items({ useSearch, startEmpty, objectID }) {
     const onItemClicked = (id) => {
         setSelectedItem(id);
         setCurrentItem(id);
-        showTop();
+        showTop(false);
     };
 
     // On item hover in

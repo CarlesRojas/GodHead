@@ -33,4 +33,9 @@ export default class EventsPubSub {
         desciption:     Called when the search should be cleared
         parameters:     {}
     },
+    {
+        event:          onFocusSearch
+        desciption:     Called when the search should be focused
+        parameters:     {}
+    },
 */

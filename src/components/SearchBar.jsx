@@ -125,6 +125,18 @@ export default function SearchBar() {
         }, 500);
     };
 
+    // Focus timeout
+    const focusTimeout = useRef(null);
+
+    // Focus search
+    const focusSearch = () => {
+        clearTimeout(focusTimeout.current);
+
+        focusTimeout.current = setTimeout(() => {
+            if (inputRef.current) inputRef.current.focus();
+        }, 200);
+    };
+
     // #################################################
     //   COMPONENT MOUNT
     // #################################################
@@ -133,10 +145,15 @@ export default function SearchBar() {
     useEffect(() => {
         // Subscribe to events
         window.PubSub.sub("onClearSearch", clearSearch);
+        window.PubSub.sub("onFocusSearch", focusSearch);
 
         // Unsubscribe from events
         return () => {
             window.PubSub.unsub("onClearSearch", clearSearch);
+            window.PubSub.sub("onFocusSearch", focusSearch);
+
+            clearTimeout(filterTimeout.current);
+            clearTimeout(focusTimeout.current);
         };
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
