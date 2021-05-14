@@ -37,12 +37,8 @@ export default function SearchBar() {
 
     // On search icon clicked
     const iconClicked = () => {
-        if (searchText === "") {
-            inputRef.current.focus();
-            return;
-        }
-
         clearSearch();
+        if (inputRef.current) inputRef.current.focus();
     };
 
     // Apply filter timeout
